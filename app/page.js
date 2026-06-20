@@ -143,7 +143,7 @@ export default function HomePage() {
       <Nav />
 
       {/* HERO */}
-      <section style={{ position: "relative", overflow: "hidden", minHeight: 560, display: "flex", alignItems: "center" }}>
+      <section style={{ position: "relative", overflow: "hidden", minHeight: 460, display: "flex", alignItems: "center" }} className="hero-photo-section">
         <div
           className="hero-bg"
           style={{
@@ -166,91 +166,97 @@ export default function HomePage() {
             position: "relative",
             maxWidth: 1180,
             margin: "0 auto",
-            padding: "88px 24px 76px",
-            display: "grid",
-            gridTemplateColumns: "1fr minmax(0,400px)",
-            gap: 52,
-            alignItems: "center",
+            padding: "72px 24px 60px",
             width: "100%",
           }}
-          className="hero-grid"
         >
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "rgba(42,157,143,.22)",
-                border: "1px solid rgba(42,157,143,.5)",
-                color: COLORS.mint,
-                padding: "6px 14px",
-                borderRadius: 20,
-                fontSize: 12,
-                fontWeight: 600,
-                marginBottom: 22,
-              }}
-            >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.mint, display: "inline-block" }} />
-              100% Remote Chiropractic Billing — All 50 States
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "rgba(42,157,143,.22)",
+              border: "1px solid rgba(42,157,143,.5)",
+              color: COLORS.mint,
+              padding: "6px 14px",
+              borderRadius: 20,
+              fontSize: 12,
+              fontWeight: 600,
+              marginBottom: 22,
+            }}
+          >
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.mint, display: "inline-block" }} />
+            100% Remote Chiropractic Billing — All 50 States
+          </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "clamp(32px,4.4vw,52px)",
-                color: "#fff",
-                lineHeight: 1.15,
-                margin: "0 0 18px",
-                fontWeight: 700,
-              }}
-            >
-              Remote Chiropractic Billing
-              <br />
-              for <em style={{ color: COLORS.mint, fontStyle: "italic" }}>Every Practice,<br />In Every State</em>
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            style={{
+              fontFamily: "Georgia, serif",
+              fontSize: "clamp(32px,4.4vw,52px)",
+              color: "#fff",
+              lineHeight: 1.15,
+              margin: "0 0 18px",
+              fontWeight: 700,
+              maxWidth: 720,
+            }}
+          >
+            Remote Chiropractic Billing
+            <br />
+            for <em style={{ color: COLORS.mint, fontStyle: "italic" }}>Every Practice,<br />In Every State</em>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.32, duration: 0.6 }}
-              style={{ fontSize: 15, color: "rgba(255,255,255,.78)", lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}
-            >
-              MYRI Medical Billing handles your entire revenue cycle — claim coding (98940–98942), insurance
-              verification, denial appeals, and Medicare compliance — for chiropractic practices in all 50 states.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.42, duration: 0.6 }}
-              style={{ display: "flex", gap: 12, flexWrap: "wrap" }}
-            >
-              <Link
-                href="/contact"
-                style={{ background: COLORS.teal, color: "#fff", padding: "13px 24px", borderRadius: 9, fontWeight: 600, fontSize: 14.5, textDecoration: "none" }}
-              >
-                Get Your Free Billing Audit →
-              </Link>
-              <Link
-                href="/services"
-                style={{ border: "1.5px solid rgba(255,255,255,.45)", color: "#fff", padding: "12px 22px", borderRadius: 9, fontWeight: 500, fontSize: 14.5, textDecoration: "none" }}
-              >
-                Our Services
-              </Link>
-            </motion.div>
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.32, duration: 0.6 }}
+            style={{ fontSize: 15, color: "rgba(255,255,255,.78)", lineHeight: 1.7, maxWidth: 520, marginBottom: 28 }}
+          >
+            MYRI Medical Billing handles your entire revenue cycle — claim coding (98940–98942), insurance
+            verification, denial appeals, and Medicare compliance — for chiropractic practices in all 50 states.
+          </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.42, duration: 0.6 }}
+            style={{ display: "flex", gap: 12, flexWrap: "wrap" }}
+          >
+            <Link
+              href="/contact"
+              style={{ background: COLORS.teal, color: "#fff", padding: "13px 24px", borderRadius: 9, fontWeight: 600, fontSize: 14.5, textDecoration: "none" }}
+            >
+              Get Your Free Billing Audit →
+            </Link>
+            <Link
+              href="/services"
+              style={{ border: "1.5px solid rgba(255,255,255,.45)", color: "#fff", padding: "12px 22px", borderRadius: 9, fontWeight: 500, fontSize: 14.5, textDecoration: "none" }}
+            >
+              Our Services
+            </Link>
+          </motion.div>
+        </div>
+        <style>{`@media (max-width: 860px) { .hero-bg { background-position: center center !important; } }`}</style>
+      </section>
+
+      {/* HERO AUDIT FORM */}
+      <section style={{ background: COLORS.navy, padding: "44px 24px" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr minmax(0,400px)", gap: 52, alignItems: "start", paddingTop: 8 }} className="hero-form-grid">
+          <div style={{ color: "rgba(255,255,255,.7)", fontSize: 14, lineHeight: 1.7 }}>
+            Request your free, no-obligation billing audit and find out exactly how much revenue your chiropractic
+            practice could be recovering — most practices we audit are leaving 15–25% of collectible revenue on the
+            table.
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             style={{ background: "#FFFFFF", borderRadius: 18, padding: 24, boxShadow: "0 20px 60px rgba(0,0,0,.28)", position: "relative", zIndex: 5 }}
           >
             {heroSubmitted ? (
@@ -305,7 +311,7 @@ export default function HomePage() {
             )}
           </motion.div>
         </div>
-        <style>{`@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .hero-bg { background-position: center center !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .hero-form-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
       <StatsStrip stats={HOME_STATS} />
