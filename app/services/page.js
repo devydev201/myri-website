@@ -272,16 +272,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 60px", textAlign: "center" }}>
-        <div style={{ fontSize: 17, fontStyle: "italic", color: COLORS.navy, lineHeight: 1.6, maxWidth: 760, margin: "0 auto 14px" }}>
-          &quot;MYRI Medical Billing has significantly improved our revenue cycle. Their attention to detail and 24/7
-          support are invaluable. Since switching to MYRI, our denial rate has dropped dramatically and our
-          collections have increased.&quot;
-        </div>
-        <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 600 }}>— Dr. Mark Pagan, Heathrow Chiropractic, Lake Mary, FL (HQ)</div>
-      </div>
-
       <Footer />
     </div>
   );

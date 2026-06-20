@@ -184,16 +184,6 @@ export default function RCMPage() {
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
-      {/* TESTIMONIAL */}
-      <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 56px", textAlign: "center" }}>
-        <div style={{ fontSize: 17, fontStyle: "italic", color: COLORS.navy, lineHeight: 1.6, maxWidth: 760, margin: "0 auto 14px" }}>
-          &quot;MYRI Medical Billing has transformed our revenue cycle, significantly improving our cash flow and
-          reducing administrative burdens. Their chiropractic expertise and 24/7 support are invaluable to our
-          practice.&quot;
-        </div>
-        <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 600 }}>— Dr. Mark Pagan, Heathrow Chiropractic, Lake Mary, FL (HQ)</div>
-      </div>
-
       {/* CTA */}
       <section style={{ padding: "0 24px 72px" }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", background: COLORS.tealLight, borderRadius: 20, padding: "48px 32px" }}>
