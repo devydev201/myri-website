@@ -305,7 +305,7 @@ export default function HomePage() {
             )}
           </motion.div>
         </div>
-        <style>{`@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .hero-bg { background-position: center center !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .hero-bg { background-size: contain !important; background-repeat: no-repeat !important; background-position: center center !important; background-color: ${COLORS.navy}; } }`}</style>
       </section>
 
       <StatsStrip stats={HOME_STATS} />
