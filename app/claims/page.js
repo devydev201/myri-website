@@ -88,7 +88,7 @@ export default function ClaimsPage() {
     setClaimsSubmitting(true);
     const data = new URLSearchParams(new FormData(e.target));
     try {
-      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data.toString() });
+      await fetch("/__forms.html", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data.toString() });
     } catch (err) {
       // Proceed to confirmation regardless — Netlify Forms may still capture the submission.
     }
