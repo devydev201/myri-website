@@ -160,7 +160,7 @@ export default function AboutPage() {
               {[
                 "Fast turnaround — claims submitted within 24–48 hours",
                 "Denial appeals filed within 72 hours of every rejection",
-                "Monthly performance reports and 24/7 dashboard access",
+                "Monthly performance reports and real-time dashboard access",
                 "Dedicated chiropractic billing specialist assigned to your practice",
                 "No long-term contracts — month-to-month agreements",
               ].map((item) => (

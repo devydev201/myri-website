@@ -47,7 +47,7 @@ const PLANS = [
       "Personal injury & PIP billing",
       "Medicare chiropractic billing",
       "Dedicated billing specialist",
-      "24/7 support & dashboard access",
+      "Dedicated support & dashboard access",
     ],
     featured: true,
   },

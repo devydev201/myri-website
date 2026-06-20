@@ -14,7 +14,7 @@ const STATS = [
   { value: 97, suffix: "%", label: "First-Pass Claim Approval Rate" },
   { value: 9, suffix: "", label: "Core Billing Services Offered" },
   { value: 72, suffix: "hr", label: "Denial Appeal Response Time" },
-  { value: 24, suffix: "/7", label: "Client Support & Dashboard Access" },
+  { value: 100, suffix: "%", label: "Dedicated Client Support" },
 ];
 
 const SERVICES = [
@@ -86,7 +86,7 @@ const SERVICES = [
       "Monthly performance reports with collection rate benchmarking",
       "Denial rate tracking by payer, CPT code, and provider",
       "AR aging analysis with recovery prioritization",
-      "24/7 client dashboard access for real-time financial visibility",
+      "Real-time financial visibility through detailed performance reporting",
     ],
     img: "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
@@ -115,12 +115,12 @@ const SERVICES = [
     img: "https://images.pexels.com/photos/7578815/pexels-photo-7578815.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    tag: "Support",
-    title: "24/7 Client Support & Account Management",
-    desc: "Our commitment to your chiropractic practice extends around the clock. Whether you need account updates, report access, assistance with a claim, or answers to billing questions — our dedicated team is available 24/7.",
+    tag: "Client Care",
+    title: "Dedicated Client Support & Account Management",
+    desc: "Our commitment to your chiropractic practice goes beyond billing. Whether you need account updates, report access, assistance with a claim, or answers to billing questions — our dedicated team is responsive and easy to reach.",
     list: [
       "Dedicated chiropractic billing specialist assigned to your practice",
-      "24/7 availability via phone, email, and client portal",
+      "Responsive support via phone, email, and client portal",
       "Real-time claim status updates through your client dashboard",
       "Regular billing performance review calls with your team",
     ],
@@ -139,7 +139,7 @@ function ServiceMixChart() {
     { name: "Analytics & Reporting", value: 1 },
     { name: "Credentialing", value: 1 },
     { name: "Compliance & Security", value: 1 },
-    { name: "24/7 Support", value: 1 },
+    { name: "Client Support", value: 1 },
   ];
   const pieColors = [COLORS.teal, COLORS.navy, "#3FB3A3", "#7FD8C9", "#9FE6D4", "#C8E8E4", "#1E7068", "#5BC4B5", "#A8E0D2"];
 
@@ -261,7 +261,7 @@ export default function ServicesPage() {
               <p style={{ fontSize: 13, color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}>
                 Each of the 9 core services on this page is included in our full-service plans — claims and coding,
                 insurance verification, payment posting, denial appeals, patient billing, analytics, credentialing,
-                compliance, and round-the-clock support.
+                compliance, and dedicated client support.
               </p>
             </div>
             <div style={{ background: "#fff", borderRadius: 14, padding: "16px 12px" }}>

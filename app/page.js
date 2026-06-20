@@ -14,7 +14,7 @@ const HOME_STATS = [
   { value: 97, suffix: "%", label: "First-Pass Claim Approval Rate" },
   { value: 30, suffix: "%", label: "Average Reduction in Claim Denials" },
   { value: 48, suffix: "hr", label: "Average Claim Submission Time" },
-  { value: 24, suffix: "/7", label: "Client Support Available" },
+  { value: 5, suffix: "", label: "Business Days to Onboard" },
 ];
 
 // Real denial-rate trend data reflecting the site's stated 30% average reduction
@@ -373,7 +373,7 @@ export default function HomePage() {
               { Icon: Globe, t: "All 50 States Covered", d: "We bill for DC practices from Florida to California, Texas to New York — every state, every major payer." },
               { Icon: Lock, t: "Secure EHR Integration", d: "We connect directly to ChiroTouch, Jane, ECLIPSE, and Genesis via encrypted, HIPAA-compliant remote access." },
               { Icon: Smartphone, t: "No Office Visit Needed", d: "Onboard remotely in 5 business days. No paperwork to mail, no in-person meetings, no disruption to your practice." },
-              { Icon: BarChart3, t: "24/7 Dashboard Access", d: "Monitor your claims, collections, and denials in real time through your secure online client dashboard — from any device." },
+              { Icon: BarChart3, t: "Real-Time Reporting Access", d: "Monitor your claims, collections, and denials through your secure online client dashboard — from any device." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ background: "rgba(255,255,255,.1)" }}
@@ -491,22 +491,73 @@ export default function HomePage() {
             <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Simple Onboarding Process</div>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: 0 }}>Up and Running in <em>Less Than a Week</em></h2>
           </motion.div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} className="steps-grid">
+          <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} className="steps-grid">
+            <div className="steps-track" aria-hidden="true">
+              <div className="steps-track-fill" />
+            </div>
             {[
               { n: 1, t: "Free Billing Audit", d: "We review 30 days of your claims and show you exactly where revenue is leaking — zero cost, zero obligation." },
               { n: 2, t: "Custom Setup", d: "We integrate seamlessly with your EHR (ChiroTouch, Jane, ECLIPSE, Genesis) via secure remote connection, configure your state-specific payers, and map your exact workflows." },
               { n: 3, t: "We Handle Billing", d: "Every claim is reviewed, coded, and submitted. You treat patients anywhere in the USA. We handle billing remotely from Lake Mary, FL." },
-              { n: 4, t: "Track Your Revenue", d: "Monthly reports and 24/7 dashboard access give full visibility into collections, denials, and claim status." },
+              { n: 4, t: "Track Your Revenue", d: "Monthly reports and real-time reporting access give full visibility into collections, denials, and claim status." },
             ].map((s, i) => (
               <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center" }}>
-                <div style={{ width: 50, height: 50, borderRadius: "50%", background: COLORS.teal, color: "#fff", fontFamily: "Georgia, serif", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>{s.n}</div>
+                transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center", position: "relative" }}>
+                <div className="step-dot" style={{ animationDelay: `${i * 1.05}s` }}>{s.n}</div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 8 }}>{s.t}</div>
                 <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{s.d}</div>
               </motion.div>
             ))}
           </div>
-          <style>{`@media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`
+            @media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr 1fr !important; } .steps-track { display: none; } }
+            @media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr !important; } }
+            .steps-track {
+              position: absolute;
+              top: 25px;
+              left: 12.5%;
+              right: 12.5%;
+              height: 3px;
+              background: ${COLORS.grayLight};
+              border-radius: 2px;
+              overflow: hidden;
+              z-index: 0;
+            }
+            .steps-track-fill {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 30%;
+              background: linear-gradient(90deg, transparent, ${COLORS.teal}, transparent);
+              animation: track-sweep 4.2s ease-in-out infinite;
+            }
+            @keyframes track-sweep {
+              0% { left: -30%; }
+              100% { left: 100%; }
+            }
+            .step-dot {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              background: ${COLORS.teal};
+              color: #fff;
+              font-family: Georgia, serif;
+              font-size: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 14px;
+              position: relative;
+              z-index: 1;
+              animation: dot-pulse 4.2s ease-in-out infinite;
+            }
+            @keyframes dot-pulse {
+              0%, 18%, 100% { box-shadow: 0 0 0 0 rgba(42,157,143,0); transform: scale(1); }
+              22% { box-shadow: 0 0 0 8px rgba(42,157,143,.18); transform: scale(1.08); }
+              30%, 100% { box-shadow: 0 0 0 0 rgba(42,157,143,0); transform: scale(1); }
+            }
+          `}</style>
         </div>
       </section>
 

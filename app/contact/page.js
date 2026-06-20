@@ -143,7 +143,6 @@ export default function ContactPage() {
                 <span style={{ color: COLORS.mint, fontWeight: 500 }}>{time}</span>
               </div>
             ))}
-            <div style={{ marginTop: 6, fontSize: 11, color: "rgba(255,255,255,.4)" }}>* Emergency billing support available 24/7 via email</div>
 
             <div style={{ marginTop: 22, marginBottom: 8, fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.4)", letterSpacing: ".08em", textTransform: "uppercase" }}>HQ & Remote Service Coverage</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
