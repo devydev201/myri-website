@@ -112,7 +112,7 @@ const SERVICES = [
       "BAA (Business Associate Agreement) executed with all client practices",
       "Advanced billing software with multi-factor authentication",
     ],
-    img: "https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://images.pexels.com/photos/7578815/pexels-photo-7578815.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Support",
@@ -169,7 +169,7 @@ export default function ServicesPage() {
         accent="Maximizes Every Dollar"
         desc="At MYRI Medical Billing, we offer a full spectrum of chiropractic revenue cycle management solutions — designed to improve cash flow, reduce claim denials, and ensure accurate, timely reimbursements for your chiropractic practice."
         img="/images/services-hero.jpg"
-        pos="right 20%"
+        pos="center center"
       />
       <StatsStrip stats={STATS} />
 
@@ -191,7 +191,7 @@ export default function ServicesPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10, minWidth: 200 }}>
               {["Serving all 50 states", "Secure EHR integration", "Remote onboarding in 5 days", "No office visit required"].map((t) => (
                 <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#3a4a48", background: "#fff", padding: "10px 14px", borderRadius: 10, border: "0.5px solid #eee" }}>
-                  <span style={{ color: COLORS.teal, fontWeight: 700 }}>✓</span> {t}
+                  <CheckCircle2 size={15} color={COLORS.teal} style={{ flexShrink: 0 }} /> {t}
                 </div>
               ))}
               <Link href="/contact" style={{ textAlign: "center", background: COLORS.teal, color: "#fff", padding: "10px 18px", borderRadius: 9, fontSize: 13, fontWeight: 600, textDecoration: "none" }}>

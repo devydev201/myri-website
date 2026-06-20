@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { CheckCircle2, Phone, Mail } from "lucide-react";
+import { CheckCircle2, Phone, Mail, PiggyBank, TrendingUp, Clock, Lock } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -260,14 +260,14 @@ export default function PricingPage() {
           </motion.div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="save-grid">
             {[
-              { ico: "💰", t: "Eliminate Staff Overhead", d: "No salary, benefits, payroll taxes, or training costs for in-house billing staff. MYRI's fee is typically less than one part-time biller." },
-              { ico: "📈", t: "Increase Collections", d: "Our chiropractic billing expertise and denial management typically increase collections by 15–25% in the first 90 days." },
-              { ico: "⏱️", t: "Save DC and Staff Time", d: "Your time and your team's time is better spent on patient care, not billing — zero billing burden on your staff." },
-              { ico: "🔒", t: "Reduce Compliance Risk", d: "Our certified coders and HIPAA-compliant systems reduce your audit risk and compliance exposure." },
+              { Icon: PiggyBank, t: "Eliminate Staff Overhead", d: "No salary, benefits, payroll taxes, or training costs for in-house billing staff. MYRI's fee is typically less than one part-time biller." },
+              { Icon: TrendingUp, t: "Increase Collections", d: "Our chiropractic billing expertise and denial management typically increase collections by 15–25% in the first 90 days." },
+              { Icon: Clock, t: "Save DC and Staff Time", d: "Your time and your team's time is better spent on patient care, not billing — zero billing burden on your staff." },
+              { Icon: Lock, t: "Reduce Compliance Risk", d: "Our certified coders and HIPAA-compliant systems reduce your audit risk and compliance exposure." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 20 }}>
-                <div style={{ fontSize: 26, marginBottom: 10 }}>{c.ico}</div>
+                <c.Icon size={26} color={COLORS.teal} style={{ marginBottom: 10 }} />
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{c.t}</div>
                 <div style={{ fontSize: 12, color: COLORS.gray, lineHeight: 1.6 }}>{c.d}</div>
               </motion.div>
@@ -358,7 +358,9 @@ export default function PricingPage() {
                 <button type="submit" disabled={quoteSubmitting} style={{ width: "100%", background: COLORS.teal, color: "#fff", border: "none", padding: 13, borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: quoteSubmitting ? "default" : "pointer", opacity: quoteSubmitting ? 0.7 : 1 }}>
                   {quoteSubmitting ? "Sending..." : "Request My Custom Quote →"}
                 </button>
-                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10 }}>🔒 HIPAA-compliant · No obligation · Response within 24 hours</p>
+                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
+                  <Lock size={11} color={COLORS.gray} /> HIPAA-compliant · No obligation · Response within 24 hours
+                </p>
               </form>
             )}
           </div>

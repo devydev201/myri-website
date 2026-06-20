@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
-import { ClipboardList, RefreshCw, Briefcase, Car, Building2, FileSignature, Search, Lock, CheckCircle2, ChevronDown } from "lucide-react";
+import { ClipboardList, RefreshCw, Briefcase, Car, Building2, FileSignature, Search, Lock, CheckCircle2, ChevronDown, Globe, Smartphone, BarChart3, Ban, Hash, MapPin } from "lucide-react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import StatsStrip from "../components/StatsStrip";
@@ -370,15 +370,15 @@ export default function HomePage() {
           </motion.div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="remote-cards">
             {[
-              { ico: "🌐", t: "All 50 States Covered", d: "We bill for DC practices from Florida to California, Texas to New York — every state, every major payer." },
-              { ico: "🔒", t: "Secure EHR Integration", d: "We connect directly to ChiroTouch, Jane, ECLIPSE, and Genesis via encrypted, HIPAA-compliant remote access." },
-              { ico: "📱", t: "No Office Visit Needed", d: "Onboard remotely in 5 business days. No paperwork to mail, no in-person meetings, no disruption to your practice." },
-              { ico: "📊", t: "24/7 Dashboard Access", d: "Monitor your claims, collections, and denials in real time through your secure online client dashboard — from any device." },
+              { Icon: Globe, t: "All 50 States Covered", d: "We bill for DC practices from Florida to California, Texas to New York — every state, every major payer." },
+              { Icon: Lock, t: "Secure EHR Integration", d: "We connect directly to ChiroTouch, Jane, ECLIPSE, and Genesis via encrypted, HIPAA-compliant remote access." },
+              { Icon: Smartphone, t: "No Office Visit Needed", d: "Onboard remotely in 5 business days. No paperwork to mail, no in-person meetings, no disruption to your practice." },
+              { Icon: BarChart3, t: "24/7 Dashboard Access", d: "Monitor your claims, collections, and denials in real time through your secure online client dashboard — from any device." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ background: "rgba(255,255,255,.1)" }}
                 style={{ background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 14, padding: 22 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.ico}</div>
+                <c.Icon size={26} color={COLORS.mint} style={{ marginBottom: 10 }} />
                 <div style={{ fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 6 }}>{c.t}</div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,.55)", lineHeight: 1.6 }}>{c.d}</div>
               </motion.div>
@@ -399,15 +399,15 @@ export default function HomePage() {
           </motion.div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="why-grid">
             {[
-              { ico: "🚫", t: "Medicare Chiropractic Visit Limitations", d: "Medicare covers only spinal manipulation (98940–98942) and excludes maintenance care. Billing incorrectly triggers costly audits and clawbacks. MYRI keeps every Medicare claim compliant and defensible." },
-              { ico: "🔢", t: "Chiropractic CPT Code & Modifier Errors", d: "98940, 98941, 98942, 97110, 97530 — chiropractic coding demands precise region counts and modifier application. One miscoded claim can cascade into a payer audit affecting dozens of future submissions." },
-              { ico: "🚗", t: "Personal Injury, PIP & MedPay Billing — All States", d: "Auto accident chiropractic billing involves PIP, MedPay, at-fault liability, and attorney liens — and every state has different rules. MYRI handles PI billing daily for DC offices across the country." },
-              { ico: "❌", t: "Medical Necessity Denials", d: "Payers routinely deny chiropractic claims for lack of medical necessity. MYRI builds bulletproof appeal packages and recovers denied revenue — with a formal response submitted within 72 hours of every denial." },
+              { Icon: Ban, t: "Medicare Chiropractic Visit Limitations", d: "Medicare covers only spinal manipulation (98940–98942) and excludes maintenance care. Billing incorrectly triggers costly audits and clawbacks. MYRI keeps every Medicare claim compliant and defensible." },
+              { Icon: Hash, t: "Chiropractic CPT Code & Modifier Errors", d: "98940, 98941, 98942, 97110, 97530 — chiropractic coding demands precise region counts and modifier application. One miscoded claim can cascade into a payer audit affecting dozens of future submissions." },
+              { Icon: Car, t: "Personal Injury, PIP & MedPay Billing — All States", d: "Auto accident chiropractic billing involves PIP, MedPay, at-fault liability, and attorney liens — and every state has different rules. MYRI handles PI billing daily for DC offices across the country." },
+              { Icon: ClipboardList, t: "Medical Necessity Denials", d: "Payers routinely deny chiropractic claims for lack of medical necessity. MYRI builds bulletproof appeal packages and recovers denied revenue — with a formal response submitted within 72 hours of every denial." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -4 }}
                 style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 22 }}>
-                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.ico}</div>
+                <c.Icon size={26} color={COLORS.teal} style={{ marginBottom: 10 }} />
                 <div style={{ fontWeight: 700, fontSize: 13.5, color: COLORS.navy, marginBottom: 8 }}>{c.t}</div>
                 <div style={{ fontSize: 12, color: COLORS.gray, lineHeight: 1.6 }}>{c.d}</div>
               </motion.div>
@@ -565,8 +565,9 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 12.5, color: COLORS.gray }}>
-              📍 Serving Lake Mary, Orlando, Sanford, Heathrow, Longwood, Altamonte Springs, Winter Park, Kissimmee,
+            <p style={{ fontSize: 12.5, color: COLORS.gray, display: "flex", alignItems: "flex-start", gap: 6 }}>
+              <MapPin size={14} color={COLORS.gray} style={{ flexShrink: 0, marginTop: 2 }} />
+              Serving Lake Mary, Orlando, Sanford, Heathrow, Longwood, Altamonte Springs, Winter Park, Kissimmee,
               and all nationwide.
             </p>
           </div>
@@ -602,7 +603,9 @@ export default function HomePage() {
                 <button type="submit" disabled={auditSubmitting} style={{ width: "100%", background: COLORS.teal, color: "#fff", border: "none", padding: 13, borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: auditSubmitting ? "default" : "pointer", opacity: auditSubmitting ? 0.7 : 1 }}>
                   {auditSubmitting ? "Sending..." : "Request My Free Audit — No Cost →"}
                 </button>
-                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10 }}>🔒 HIPAA-compliant · Your info is never shared · No obligation, ever</p>
+                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
+                  <Lock size={11} color={COLORS.gray} /> HIPAA-compliant · Your info is never shared · No obligation, ever
+                </p>
               </form>
             )}
           </div>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Treemap, Tooltip, ResponsiveContainer } from "recharts";
-import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -297,7 +297,9 @@ export default function ClaimsPage() {
                 <button type="submit" disabled={claimsSubmitting} style={{ width: "100%", background: COLORS.teal, color: "#fff", border: "none", padding: 13, borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: claimsSubmitting ? "default" : "pointer", opacity: claimsSubmitting ? 0.7 : 1 }}>
                   {claimsSubmitting ? "Sending..." : "Get My Free Claim Audit →"}
                 </button>
-                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10 }}>🔒 HIPAA-compliant · No obligation · Response within 24 hours</p>
+                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
+                  <Lock size={11} color={COLORS.gray} /> HIPAA-compliant · No obligation · Response within 24 hours
+                </p>
               </form>
             )}
           </div>
