@@ -9,6 +9,17 @@ import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import { COLORS, SITE } from "../../lib/tokens";
 import AnimateOnView from "../../components/AnimateOnView";
+import StatsStrip from "../../components/StatsStrip";
+
+// Figures pulled directly from claims already stated in this page's copy
+// (4–7% fee range, 15–25% collection increase, 24hr response, 5-day onboarding)
+// — no new numbers introduced.
+const STATS = [
+  { value: 7, suffix: "%", label: "Top of Percentage-Based Fee Range" },
+  { value: 25, suffix: "%", label: "Avg. Collections Increase in 90 Days" },
+  { value: 24, suffix: "hr", label: "Custom Quote Response Time" },
+  { value: 0, suffix: "", label: "Setup Fees or Long-Term Contracts" },
+];
 
 const PLANS = [
   {
@@ -112,6 +123,7 @@ export default function PricingPage() {
         img="/images/pricing-hero.jpg"
         pos="center center"
       />
+      <StatsStrip stats={STATS} />
 
       {/* PRICING CARDS */}
       <section style={{ padding: "64px 24px 0" }}>

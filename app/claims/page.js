@@ -106,7 +106,7 @@ export default function ClaimsPage() {
         accent="Chiropractic Claim Submission"
         desc="At MYRI Medical Billing, we understand that efficient claim submission and proactive follow-up are the backbone of a successful chiropractic revenue cycle. Our goal is to ensure your claims are submitted accurately, tracked consistently, and paid promptly."
         img="/images/claims-hero.jpg"
-        pos="center 25%"
+        pos="center center"
       />
       <StatsStrip stats={STATS} />
 
