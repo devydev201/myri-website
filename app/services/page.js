@@ -121,7 +121,6 @@ const SERVICES = [
     list: [
       "Dedicated chiropractic billing specialist assigned to your practice",
       "Responsive support via phone, email, and client portal",
-      "Real-time claim status updates through your client dashboard",
       "Regular billing performance review calls with your team",
     ],
     img: "https://images.pexels.com/photos/8866726/pexels-photo-8866726.jpeg?auto=compress&cs=tinysrgb&w=800",

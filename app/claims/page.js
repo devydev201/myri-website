@@ -39,7 +39,6 @@ const FOLLOWUP_CHECKS = [
 const BENEFITS = [
   { b: "Faster claim turnaround", d: "claims submitted within 24–48 hours, not days" },
   { b: "Reduced chiropractic claim denials", d: "our pre-submission audit catches errors before they cost you" },
-  { b: "Complete transparency", d: "detailed claim tracking through your client dashboard" },
   { b: "Experienced chiropractic billing specialists", d: "CPC-certified coders who know DC billing" },
   { b: "Custom reports and insights", d: "monthly analytics to continuously improve your billing performance" },
   { b: "Florida personal injury & PIP billing", d: "specialized follow-up for auto accident chiropractic claims" },

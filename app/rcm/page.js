@@ -24,7 +24,6 @@ const RCM_STEPS = [
   { n: 4, t: "Payment Posting & Reconciliation", d: "All insurance and patient payments accurately posted and reconciled. Underpayments identified and recovered. Every dollar accounted for." },
   { n: 5, t: "Denial Management & Appeals", d: "Every denied chiropractic claim analyzed, corrected, and formally appealed within 72 hours. We recover revenue that other billing companies write off." },
   { n: 6, t: "Patient Billing & Collections", d: "Clear, compliant patient billing statements with professional follow-up — improving patient pay rates while maintaining positive patient relationships." },
-  { n: 7, t: "Reporting & Performance Analytics", d: "Monthly financial performance reports, denial analysis, AR aging reports, and real-time dashboard access — full transparency into your practice's financial health." },
 ];
 
 const WHY_RCM = [
@@ -36,17 +35,16 @@ const WHY_RCM = [
   "100% HIPAA-compliant operations with dedicated client support",
 ];
 
-// Cash flow improvement across the real 7-step RCM process, anchored to the
+// Cash flow improvement across the real 6-step RCM process, anchored to the
 // stated 25% average collection rate increase by the final stage.
 function RCMImpactChart() {
   const data = [
-    { step: "Step 1", baseline: 100, optimized: 100, rate: 75 },
-    { step: "Step 2", baseline: 100, optimized: 104, rate: 80 },
-    { step: "Step 3", baseline: 100, optimized: 108, rate: 85 },
-    { step: "Step 4", baseline: 100, optimized: 113, rate: 90 },
-    { step: "Step 5", baseline: 100, optimized: 119, rate: 95 },
-    { step: "Step 6", baseline: 100, optimized: 123, rate: 98 },
-    { step: "Step 7", baseline: 100, optimized: 125, rate: 100 },
+    { step: "Step 1", baseline: 100, optimized: 100, rate: 78 },
+    { step: "Step 2", baseline: 100, optimized: 106, rate: 85 },
+    { step: "Step 3", baseline: 100, optimized: 112, rate: 90 },
+    { step: "Step 4", baseline: 100, optimized: 118, rate: 95 },
+    { step: "Step 5", baseline: 100, optimized: 122, rate: 98 },
+    { step: "Step 6", baseline: 100, optimized: 125, rate: 100 },
   ];
   return (
     <div style={{ width: "100%", height: 300 }}>
@@ -115,7 +113,7 @@ export default function RCMPage() {
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
-      {/* 7-STEP PROCESS */}
+      {/* 6-STEP PROCESS */}
       <section style={{ padding: "64px 24px", background: "#F8FAFA" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }} className="process-grid">
