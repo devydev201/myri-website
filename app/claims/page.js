@@ -8,6 +8,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import StatsStrip from "../../components/StatsStrip";
+import AnimateOnView from "../../components/AnimateOnView";
 import { COLORS, SITE } from "../../lib/tokens";
 
 const STATS = [
@@ -138,7 +139,7 @@ export default function ClaimsPage() {
             </Link>
           </motion.div>
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/claims-hero.jpg" alt="Chiropractic claim submission process" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            src="https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic claim submission process Florida MYRI Medical Billing" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -147,7 +148,7 @@ export default function ClaimsPage() {
       <section style={{ padding: "64px 24px", background: "#F8FAFA" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }} className="two-col-rev">
           <motion.img initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/rcm-hero.jpg" alt="Proactive claim follow-up" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} className="order-2-mobile" />
+            src="https://images.pexels.com/photos/7108757/pexels-photo-7108757.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Proactive chiropractic claim follow-up denial management Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} className="order-2-mobile" />
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 10 }}>Proactive Chiropractic Claim Follow-Up & Denial Management</div>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: "0 0 16px" }}>We Don&apos;t Stop Until <em>Every Claim Is Paid</em></h2>
@@ -186,7 +187,7 @@ export default function ClaimsPage() {
               <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 6 }}>Where Our Follow-Up Effort Goes</div>
               <h3 style={{ fontFamily: "Georgia, serif", fontSize: 20, color: COLORS.navy, margin: 0 }}>The 6 Pillars of Our Daily Claim Monitoring</h3>
             </div>
-            <FollowUpFocusChart />
+            <AnimateOnView height={280}><FollowUpFocusChart /></AnimateOnView>
           </motion.div>
         </div>
       </section>
@@ -216,7 +217,7 @@ export default function ClaimsPage() {
             </div>
           </motion.div>
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/contact-hero.jpg" alt="Benefits of chiropractic claim billing" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            src="https://images.pexels.com/photos/669623/pexels-photo-669623.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Benefits of chiropractic claim billing with MYRI Medical Billing Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } }`}</style>
       </section>

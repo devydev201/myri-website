@@ -7,6 +7,7 @@ import { ClipboardList, RefreshCw, Briefcase, Car, Building2, FileSignature, Sea
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import StatsStrip from "../components/StatsStrip";
+import AnimateOnView from "../components/AnimateOnView";
 import { COLORS } from "../lib/tokens";
 
 const HOME_STATS = [
@@ -308,6 +309,114 @@ export default function HomePage() {
 
       <StatsStrip stats={HOME_STATS} />
 
+      {/* WELCOME */}
+      <section style={{ padding: "64px 24px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }} className="welcome-grid">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>
+              Welcome to MYRI Medical Billing — Lake Mary, FL (HQ) | Serving Chiropractic Practices Nationwide
+            </div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: "0 0 16px" }}>
+              Your Remote Billing Partner — <em>Accurate, Profitable</em> Chiropractic Billing From Anywhere
+            </h2>
+            <p style={{ fontSize: 14.5, color: COLORS.gray, lineHeight: 1.82, marginBottom: 16 }}>
+              MYRI Medical Billing is a <strong style={{ color: COLORS.navy }}>100% remote chiropractic billing company</strong> headquartered
+              in Lake Mary, Florida. We focus exclusively on chiropractic practices — which means we know the CPT codes, the Medicare rules,
+              the personal injury billing complexities, and the payer-specific denial patterns that cost DC offices thousands in lost revenue
+              every month. And we deliver all of it remotely, from anywhere in the country.
+            </p>
+            <p style={{ fontSize: 14.5, color: COLORS.gray, lineHeight: 1.82, marginBottom: 22 }}>
+              Every chiropractic claim we submit is pre-audited for accuracy, compliance, and completeness before it ever reaches the payer.
+              You never need to visit an office or mail paperwork. Our entirely remote workflow integrates seamlessly with your EHR, giving you
+              a dedicated billing team that works as if they&apos;re down the hall — no matter what state you&apos;re in.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Link href="/contact" style={{ background: COLORS.teal, color: "#fff", padding: "12px 22px", borderRadius: 9, fontWeight: 600, fontSize: 13.5, textDecoration: "none" }}>Get a Free Billing Audit</Link>
+              <Link href="/about" style={{ border: `1.5px solid ${COLORS.teal}`, color: COLORS.teal, padding: "11px 20px", borderRadius: 9, fontWeight: 600, fontSize: 13.5, textDecoration: "none" }}>About Our Team</Link>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)" }} />
+            <div style={{ position: "absolute", bottom: -16, left: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
+              <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
+              <div style={{ fontSize: 12, marginTop: 3, opacity: 0.9 }}>HIPAA Compliant<br />Operations</div>
+            </div>
+          </motion.div>
+        </div>
+        <style>{`@media (max-width: 860px) { .welcome-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* 100% REMOTE */}
+      <section style={{ padding: "64px 24px", background: COLORS.navy }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }} className="remote-grid">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.mint, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>100% Remote Chiropractic Billing</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: "#fff", margin: "0 0 16px" }}>
+              We Bill Your Practice <em style={{ color: COLORS.mint, fontStyle: "italic" }}>Remotely — From Anywhere,</em> To Any State
+            </h2>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,.7)", lineHeight: 1.82, marginBottom: 16 }}>
+              MYRI Medical Billing is headquartered in Lake Mary, Florida — but your chiropractic practice can be anywhere in the United
+              States. Our 100% remote billing model means you get a dedicated chiropractic billing specialist working on your claims every
+              single day, without ever needing to meet in person, mail paperwork, or change how your office operates.
+            </p>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,.7)", lineHeight: 1.82, marginBottom: 22 }}>
+              We connect securely to your EHR (ChiroTouch, Jane App, ECLIPSE, Genesis), work inside your existing systems, and deliver
+              results through a fully digital workflow — encrypted, HIPAA-compliant, and completely seamless from day one.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Link href="/contact" style={{ background: COLORS.teal, color: "#fff", padding: "12px 22px", borderRadius: 9, fontWeight: 600, fontSize: 13.5, textDecoration: "none" }}>Start Remote — Free Audit</Link>
+              <Link href="/services" style={{ border: "1.5px solid rgba(255,255,255,.4)", color: "#fff", padding: "11px 20px", borderRadius: 9, fontWeight: 600, fontSize: 13.5, textDecoration: "none" }}>View All Services</Link>
+            </div>
+          </motion.div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="remote-cards">
+            {[
+              { ico: "🌐", t: "All 50 States Covered", d: "We bill for DC practices from Florida to California, Texas to New York — every state, every major payer." },
+              { ico: "🔒", t: "Secure EHR Integration", d: "We connect directly to ChiroTouch, Jane, ECLIPSE, and Genesis via encrypted, HIPAA-compliant remote access." },
+              { ico: "📱", t: "No Office Visit Needed", d: "Onboard remotely in 5 business days. No paperwork to mail, no in-person meetings, no disruption to your practice." },
+              { ico: "📊", t: "24/7 Dashboard Access", d: "Monitor your claims, collections, and denials in real time through your secure online client dashboard — from any device." },
+            ].map((c, i) => (
+              <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ background: "rgba(255,255,255,.1)" }}
+                style={{ background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 14, padding: 22 }}>
+                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.ico}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, color: "#fff", marginBottom: 6 }}>{c.t}</div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,.55)", lineHeight: 1.6 }}>{c.d}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <style>{`@media (max-width: 860px) { .remote-grid { grid-template-columns: 1fr !important; } } @media (max-width: 480px) { .remote-cards { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
+      {/* WHY DIFFERENT */}
+      <section style={{ padding: "64px 24px", background: "#F8FAFA" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: 36 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Why Chiropractic Billing Is Different from General Medical Billing</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: 0, maxWidth: 700 }}>
+              Generic Billing Companies Cost Chiropractic Offices <em>Thousands in Missed Revenue Every Month</em>
+            </h2>
+          </motion.div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="why-grid">
+            {[
+              { ico: "🚫", t: "Medicare Chiropractic Visit Limitations", d: "Medicare covers only spinal manipulation (98940–98942) and excludes maintenance care. Billing incorrectly triggers costly audits and clawbacks. MYRI keeps every Medicare claim compliant and defensible." },
+              { ico: "🔢", t: "Chiropractic CPT Code & Modifier Errors", d: "98940, 98941, 98942, 97110, 97530 — chiropractic coding demands precise region counts and modifier application. One miscoded claim can cascade into a payer audit affecting dozens of future submissions." },
+              { ico: "🚗", t: "Personal Injury, PIP & MedPay Billing — All States", d: "Auto accident chiropractic billing involves PIP, MedPay, at-fault liability, and attorney liens — and every state has different rules. MYRI handles PI billing daily for DC offices across the country." },
+              { ico: "❌", t: "Medical Necessity Denials", d: "Payers routinely deny chiropractic claims for lack of medical necessity. MYRI builds bulletproof appeal packages and recovers denied revenue — with a formal response submitted within 72 hours of every denial." },
+            ].map((c, i) => (
+              <motion.div key={c.t} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -4 }}
+                style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 22 }}>
+                <div style={{ fontSize: 28, marginBottom: 10 }}>{c.ico}</div>
+                <div style={{ fontWeight: 700, fontSize: 13.5, color: COLORS.navy, marginBottom: 8 }}>{c.t}</div>
+                <div style={{ fontSize: 12, color: COLORS.gray, lineHeight: 1.6 }}>{c.d}</div>
+              </motion.div>
+            ))}
+          </div>
+          <style>{`@media (max-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .why-grid { grid-template-columns: 1fr !important; } }`}</style>
+        </div>
+      </section>
+
       {/* DATA SECTION */}
       <section style={{ padding: "64px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }} className="data-grid">
@@ -315,10 +424,10 @@ export default function HomePage() {
             style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: 24 }}>
             <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.navy, marginBottom: 2 }}>Denial Rate, Before vs. With MYRI</div>
             <div style={{ fontSize: 11.5, color: COLORS.gray, marginBottom: 8 }}>Average 30% reduction in claim denials</div>
-            <DenialChart />
+            <AnimateOnView height={240}><DenialChart /></AnimateOnView>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
-            <PricingChart />
+            <AnimateOnView><PricingChart /></AnimateOnView>
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .data-grid { grid-template-columns: 1fr !important; } }`}</style>
@@ -327,24 +436,105 @@ export default function HomePage() {
       {/* SERVICES */}
       <section style={{ padding: "0 24px 72px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", marginBottom: 36 }}>
-            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 8 }}>What We Handle</div>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px,3vw,32px)", color: COLORS.navy, margin: 0 }}>Full-Service Billing, 100% Remote</h2>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: 32 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 8 }}>Our Remote Chiropractic Billing Services — All 50 States, 100% Remote</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px,3vw,32px)", color: COLORS.navy, margin: "0 0 12px" }}>Full-Service Chiropractic Billing That <em>Maximizes Every Reimbursement</em></h2>
+            <p style={{ fontSize: 14, color: COLORS.gray, lineHeight: 1.7, maxWidth: 700 }}>
+              From your first patient visit to final payment posting, MYRI manages every step of your chiropractic billing process — so your
+              chiropractic practice — wherever you are in the USA — collects faster with fewer denials.
+            </p>
           </motion.div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }} className="services-grid">
-            {SERVICES.map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -6 }}
-                style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 22 }}>
-                <div style={{ width: 50, height: 50, borderRadius: 13, background: COLORS.tealLight, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <s.Icon size={24} color={COLORS.teal} strokeWidth={1.8} />
-                </div>
-                <div style={{ fontSize: 14.5, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{s.title}</div>
-                <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{s.desc}</div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 18 }} className="services-photo-grid">
+            {[
+              { href: "/services", img: "https://images.pexels.com/photos/6592561/pexels-photo-6592561.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Chiropractic billing and coding specialist reviewing insurance claims Florida", name: "Chiropractic Billing & Coding (CPT 98940–98942)", desc: "Expert coding across all chiropractic CPT codes. Every claim pre-audited before submission for a 97%+ first-pass approval rate." },
+              { href: "/rcm", img: "https://images.pexels.com/photos/8297417/pexels-photo-8297417.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Revenue cycle management for chiropractic practice", name: "Chiropractic Revenue Cycle Management (RCM)", desc: "End-to-end RCM — from patient eligibility through claim submission, payment posting, and AR follow-up with full analytics." },
+              { href: "/claims", img: "https://images.pexels.com/photos/8117462/pexels-photo-8117462.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Chiropractic claim submission and follow-up Florida", name: "Chiropractic Claim Submission & AR Follow-Up", desc: "Electronic claims submitted within 24–48 hours. Systematic AR follow-up until every chiropractic claim is paid in full." },
+            ].map((s, i) => (
+              <motion.div key={s.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -6 }}>
+                <Link href={s.href} style={{ display: "block", textDecoration: "none", background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, overflow: "hidden" }}>
+                  <img src={s.img} alt={s.alt} style={{ width: "100%", height: 180, objectFit: "cover", display: "block" }} />
+                  <div style={{ padding: 18 }}>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{s.name}</div>
+                    <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6, marginBottom: 10 }}>{s.desc}</div>
+                    <div style={{ fontSize: 12.5, color: COLORS.teal, fontWeight: 600 }}>More info →</div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
-          <style>{`@media (max-width: 860px) { .services-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`@media (max-width: 860px) { .services-photo-grid { grid-template-columns: 1fr !important; } }`}</style>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="services-grid">
+            {SERVICES.map((s, i) => (
+              <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -6 }}>
+                <Link href="/services" style={{ display: "block", textDecoration: "none", background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 22, height: "100%", boxSizing: "border-box" }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 12, background: COLORS.tealLight, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                    <s.Icon size={22} color={COLORS.teal} strokeWidth={1.8} />
+                  </div>
+                  <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{s.title}</div>
+                  <div style={{ fontSize: 12, color: COLORS.gray, lineHeight: 1.6 }}>{s.desc}</div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          <style>{`@media (max-width: 860px) { .services-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .services-grid { grid-template-columns: 1fr !important; } }`}</style>
+        </div>
+      </section>
+
+      {/* ONBOARDING PROCESS */}
+      <section style={{ padding: "64px 24px", background: "#F8FAFA" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 44px" }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Simple Onboarding Process</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: 0 }}>Up and Running in <em>Less Than a Week</em></h2>
+          </motion.div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} className="steps-grid">
+            {[
+              { n: 1, t: "Free Billing Audit", d: "We review 30 days of your claims and show you exactly where revenue is leaking — zero cost, zero obligation." },
+              { n: 2, t: "Custom Setup", d: "We integrate seamlessly with your EHR (ChiroTouch, Jane, ECLIPSE, Genesis) via secure remote connection, configure your state-specific payers, and map your exact workflows." },
+              { n: 3, t: "We Handle Billing", d: "Every claim is reviewed, coded, and submitted. You treat patients anywhere in the USA. We handle billing remotely from Lake Mary, FL." },
+              { n: 4, t: "Track Your Revenue", d: "Monthly reports and 24/7 dashboard access give full visibility into collections, denials, and claim status." },
+            ].map((s, i) => (
+              <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center" }}>
+                <div style={{ width: 50, height: 50, borderRadius: "50%", background: COLORS.teal, color: "#fff", fontFamily: "Georgia, serif", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>{s.n}</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 8 }}>{s.t}</div>
+                <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{s.d}</div>
+              </motion.div>
+            ))}
+          </div>
+          <style>{`@media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr !important; } }`}</style>
+        </div>
+      </section>
+
+      {/* CHIROPRACTIC EXPERTISE */}
+      <section style={{ padding: "64px 24px", background: COLORS.navy }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: 32 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.mint, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Our Chiropractic Expertise</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: "#fff", margin: "0 0 10px" }}>We Know <em style={{ color: COLORS.mint, fontStyle: "italic" }}>Chiropractic Billing</em> Inside and Out</h2>
+            <p style={{ fontSize: 13.5, color: "rgba(255,255,255,.6)", maxWidth: 640 }}>Our team bills for all chiropractic practice types — solo DCs to multi-provider clinics — across every major payer in all 50 states.</p>
+          </motion.div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="expertise-grid">
+            {[
+              { tag: "Medicare", name: "Medicare Chiropractic Billing — All 50 States", desc: "Spinal manipulation-only coverage (CPT 98940–98942), ABN requirements, and maintenance care documentation rules — keeping your chiropractic practice compliant and audit-proof." },
+              { tag: "Auto Accidents", name: "Personal Injury & PIP Billing — All States", desc: "MedPay, PIP, at-fault liability, and attorney lien coordination across all state laws — from Florida's no-fault PIP rules to state-specific PI billing requirements nationwide." },
+              { tag: "Cash Flow", name: "Chiropractic Denial Prevention & Recovery", desc: "We proactively target the most common chiropractic denial reasons — medical necessity, visit limits, incorrect modifiers — before they happen, and aggressively appeal every wrongful denial." },
+              { tag: "Multi-Provider", name: "Multi-Provider Chiropractic Practice Billing", desc: "Scalable billing for growing chiropractic practices anywhere in the USA with multiple DCs, massage therapists, decompression, laser therapy, and shockwave services — all managed remotely." },
+            ].map((s, i) => (
+              <motion.div key={s.tag} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ background: "rgba(255,255,255,.1)" }}
+                style={{ background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 14, padding: 20 }}>
+                <div style={{ display: "inline-block", fontSize: 10, fontWeight: 700, color: COLORS.mint, letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 10 }}>{s.tag}</div>
+                <div style={{ fontSize: 13.5, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{s.name}</div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,.6)", lineHeight: 1.6 }}>{s.desc}</div>
+              </motion.div>
+            ))}
+          </div>
+          <style>{`@media (max-width: 900px) { .expertise-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .expertise-grid { grid-template-columns: 1fr !important; } }`}</style>
         </div>
       </section>
 

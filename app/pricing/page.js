@@ -8,6 +8,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import { COLORS, SITE } from "../../lib/tokens";
+import AnimateOnView from "../../components/AnimateOnView";
 
 const PLANS = [
   {
@@ -198,6 +199,32 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* COMPLIANCE SECTION */}
+      <section style={{ padding: "64px 24px", background: "#F8FAFA" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }} className="compliance-grid">
+          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Compliance &amp; Security Assurances</div>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: "0 0 16px" }}>Every Plan Includes <em>Full HIPAA Compliance</em> and Data Security</h2>
+            <p style={{ fontSize: 14, color: COLORS.gray, lineHeight: 1.82, marginBottom: 20 }}>
+              Regardless of which pricing model you choose, every MYRI Medical Billing service includes full HIPAA
+              compliance, advanced data security, and 100% protection of your patients&apos; protected health
+              information (PHI).
+            </p>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+              <thead><tr><th style={thStyle}>Compliance</th><th style={thStyle}>Assurance</th></tr></thead>
+              <tbody>
+                <tr><td style={tdStyle}><strong>HIPAA Compliance</strong></td><td style={tdStyle}>All information safeguarded in compliance with federal privacy regulations — BAA executed with every client.</td></tr>
+                <tr style={{ background: "#fff" }}><td style={tdStyle}><strong>Data Integrity</strong></td><td style={tdStyle}>Your data integrity and patient trust are always protected through secure, encrypted systems.</td></tr>
+                <tr><td style={tdStyle}><strong>Secure Systems</strong></td><td style={tdStyle}>Advanced billing software and encrypted communication systems with multi-factor authentication.</td></tr>
+              </tbody>
+            </table>
+          </motion.div>
+          <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            src="https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing pricing compliance Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+        </div>
+        <style>{`@media (max-width: 860px) { .compliance-grid { grid-template-columns: 1fr !important; } }`}</style>
+      </section>
+
       {/* PLAN COMPARISON CHART */}
       <section style={{ padding: "0 24px 64px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -207,7 +234,7 @@ export default function PricingPage() {
               <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 6 }}>Plan Comparison</div>
               <h3 style={{ fontFamily: "Georgia, serif", fontSize: 20, color: COLORS.navy, margin: 0 }}>How the 3 Pricing Models Stack Up</h3>
             </div>
-            <PlanComparisonChart />
+            <AnimateOnView height={320}><PlanComparisonChart /></AnimateOnView>
           </motion.div>
         </div>
       </section>

@@ -7,6 +7,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import StatsStrip from "../../components/StatsStrip";
+import AnimateOnView from "../../components/AnimateOnView";
 import { COLORS, SITE } from "../../lib/tokens";
 
 const STATS = [
@@ -109,7 +110,7 @@ export default function RCMPage() {
             </Link>
           </motion.div>
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/rcm-hero.jpg" alt="Chiropractic RCM process" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            src="https://images.pexels.com/photos/8297447/pexels-photo-8297447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic revenue cycle management RCM process Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -125,11 +126,12 @@ export default function RCMPage() {
                 Our comprehensive chiropractic RCM process covers every step of your practice&apos;s financial cycle
                 — managed by dedicated billing specialists who know chiropractic billing inside and out.
               </p>
+              <img src="https://images.pexels.com/photos/9034966/pexels-photo-9034966.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI comprehensive chiropractic RCM process diagram" style={{ width: "100%", borderRadius: 14, boxShadow: "0 8px 24px rgba(13,51,73,.12)", marginBottom: 20, objectFit: "cover" }} />
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: 20, boxShadow: "0 8px 28px rgba(13,51,73,.06)" }}>
                 <div style={{ fontSize: 12.5, fontWeight: 700, color: COLORS.navy, marginBottom: 2 }}>Collections Index Through the RCM Process</div>
                 <div style={{ fontSize: 11, color: COLORS.gray, marginBottom: 6 }}>Tracking toward the stated 25% average collection rate increase</div>
-                <RCMImpactChart />
+                <AnimateOnView height={300}><RCMImpactChart /></AnimateOnView>
               </motion.div>
             </div>
             <div>
@@ -177,7 +179,7 @@ export default function RCMPage() {
             </div>
           </motion.div>
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/about-hero.jpg" alt="Why choose MYRI for RCM" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
       </section>

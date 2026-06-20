@@ -7,6 +7,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import StatsStrip from "../../components/StatsStrip";
+import AnimateOnView from "../../components/AnimateOnView";
 import { COLORS } from "../../lib/tokens";
 
 const STATS = [
@@ -125,7 +126,7 @@ export default function AboutPage() {
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
-            <img src="/images/about-hero.jpg" alt="MYRI Medical Billing team" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            <img src="https://images.pexels.com/photos/2422288/pexels-photo-2422288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing team about us chiropractic billing Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
             <div style={{ position: "absolute", bottom: -16, right: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
               <div style={{ fontSize: 11.5, marginTop: 3, opacity: 0.9 }}>Chiropractic<br />Billing Focused</div>
@@ -174,7 +175,7 @@ export default function AboutPage() {
             </Link>
           </motion.div>
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="/images/services-hero.jpg" alt="MYRI Medical Billing operations" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing operations" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -268,7 +269,7 @@ export default function AboutPage() {
               style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 18, padding: 24, boxShadow: "0 8px 28px rgba(13,51,73,.08)" }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.navy, marginBottom: 2 }}>Avg. Uncollected Revenue Found, by Milestone</div>
               <div style={{ fontSize: 11.5, color: COLORS.gray, marginBottom: 8 }}>From our first billing audits through today</div>
-              <JourneyChart />
+              <AnimateOnView height={260}><JourneyChart /></AnimateOnView>
             </motion.div>
           </div>
         </div>

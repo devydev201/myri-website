@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { COLORS } from "../lib/tokens";
+import AnimatedCounter from "./AnimatedCounter";
 
 export default function StatsStrip({ stats }) {
   return (
@@ -25,7 +26,7 @@ export default function StatsStrip({ stats }) {
             style={{ textAlign: "center" }}
           >
             <div style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px,3vw,32px)", color: "#fff", fontWeight: 700 }}>
-              {s.value}
+              <AnimatedCounter value={s.value} decimals={s.decimals || 0} />
               <sup style={{ fontSize: "0.5em" }}>{s.suffix}</sup>
             </div>
             <div style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", marginTop: 4 }}>{s.label}</div>

@@ -7,6 +7,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import { COLORS, SITE } from "../../lib/tokens";
+import AnimateOnView from "../../components/AnimateOnView";
 
 const FAQS = [
   { q: "How quickly can MYRI onboard my chiropractic practice?", a: "Most chiropractic practices nationwide are fully onboarded and billing live within 5 business days. We handle complete remote setup — EHR integration (ChiroTouch, Jane, ECLIPSE, Genesis), payer configuration for your state, and team training — with minimal disruption to your practice regardless of location." },
@@ -141,7 +142,7 @@ export default function ContactPage() {
 
             <div style={{ marginTop: 26, paddingTop: 22, borderTop: "1px solid rgba(255,255,255,.1)" }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.4)", letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10, textAlign: "center" }}>Our Promise</div>
-              <ResponseTimeGauge />
+              <AnimateOnView height={200}><ResponseTimeGauge /></AnimateOnView>
             </div>
           </motion.div>
 

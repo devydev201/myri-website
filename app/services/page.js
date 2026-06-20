@@ -7,6 +7,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import StatsStrip from "../../components/StatsStrip";
+import AnimateOnView from "../../components/AnimateOnView";
 import { COLORS } from "../../lib/tokens";
 
 const STATS = [
@@ -27,7 +28,7 @@ const SERVICES = [
       "Electronic claim submission to all major payers nationwide within 24–48 hours",
       "ICD-10-CM chiropractic diagnosis coding with full documentation support",
     ],
-    img: "/images/services-hero.jpg",
+    img: "https://images.pexels.com/photos/9363536/pexels-photo-9363536.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Insurance",
@@ -39,7 +40,7 @@ const SERVICES = [
       "Obtain and track pre-authorizations and referrals",
       "PIP and personal injury coverage verification for auto accident patients",
     ],
-    img: "/images/about-hero.jpg",
+    img: "https://images.pexels.com/photos/6248984/pexels-photo-6248984.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Payments",
@@ -51,7 +52,7 @@ const SERVICES = [
       "Underpayment identification and recovery",
       "Patient payment posting and balance reconciliation",
     ],
-    img: "/images/rcm-hero.jpg",
+    img: "https://images.pexels.com/photos/8085931/pexels-photo-8085931.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Denials",
@@ -63,7 +64,7 @@ const SERVICES = [
       "Medical necessity appeal letters with clinical documentation support",
       "Payer escalation and peer-to-peer review coordination",
     ],
-    img: "/images/claims-hero.jpg",
+    img: "https://images.pexels.com/photos/7821674/pexels-photo-7821674.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Patient Billing",
@@ -75,7 +76,7 @@ const SERVICES = [
       "Payment plan coordination and tracking",
       "Patient responsibility calculation after insurance adjudication",
     ],
-    img: "/images/contact-hero.jpg",
+    img: "https://images.pexels.com/photos/4269274/pexels-photo-4269274.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Analytics",
@@ -87,7 +88,7 @@ const SERVICES = [
       "AR aging analysis with recovery prioritization",
       "24/7 client dashboard access for real-time financial visibility",
     ],
-    img: "/images/rcm-hero.jpg",
+    img: "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Credentialing",
@@ -99,7 +100,7 @@ const SERVICES = [
       "Group and individual NPI enrollment",
       "Credentialing status monitoring and follow-up",
     ],
-    img: "/images/about-hero.jpg",
+    img: "https://images.pexels.com/photos/7567533/pexels-photo-7567533.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Compliance",
@@ -111,7 +112,7 @@ const SERVICES = [
       "BAA (Business Associate Agreement) executed with all client practices",
       "Advanced billing software with multi-factor authentication",
     ],
-    img: "/images/services-hero.jpg",
+    img: "https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     tag: "Support",
@@ -123,7 +124,7 @@ const SERVICES = [
       "Real-time claim status updates through your client dashboard",
       "Regular billing performance review calls with your team",
     ],
-    img: "/images/claims-hero.jpg",
+    img: "https://images.pexels.com/photos/8866726/pexels-photo-8866726.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
@@ -264,7 +265,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div style={{ background: "#fff", borderRadius: 14, padding: "16px 12px" }}>
-              <ServiceMixChart />
+              <AnimateOnView height={320}><ServiceMixChart /></AnimateOnView>
             </div>
           </motion.div>
           <style>{`@media (max-width: 860px) { .mix-grid { grid-template-columns: 1fr !important; } }`}</style>
