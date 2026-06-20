@@ -145,6 +145,7 @@ export default function HomePage() {
       {/* HERO */}
       <section style={{ position: "relative", overflow: "hidden", minHeight: 560, display: "flex", alignItems: "center" }}>
         <div
+          className="hero-bg"
           style={{
             position: "absolute",
             inset: 0,
@@ -304,7 +305,7 @@ export default function HomePage() {
             )}
           </motion.div>
         </div>
-        <style>{`@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr !important; } .hero-bg { background-position: center center !important; } }`}</style>
       </section>
 
       <StatsStrip stats={HOME_STATS} />
