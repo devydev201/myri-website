@@ -14,7 +14,7 @@ const STATS = [
   { value: 97, suffix: "%", label: "First-Pass Claim Approval Rate" },
   { value: 9, suffix: "", label: "Core Billing Services Offered" },
   { value: 72, suffix: "hr", label: "Denial Appeal Response Time" },
-  { value: 100, suffix: "%", label: "Dedicated Client Support" },
+  { value: 24, suffix: "/7", label: "Client Support & Dashboard Access" },
 ];
 
 const SERVICES = [
@@ -86,7 +86,7 @@ const SERVICES = [
       "Monthly performance reports with collection rate benchmarking",
       "Denial rate tracking by payer, CPT code, and provider",
       "AR aging analysis with recovery prioritization",
-      "Real-time financial visibility through detailed performance reporting",
+      "24/7 client dashboard access for real-time financial visibility",
     ],
     img: "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
@@ -112,15 +112,16 @@ const SERVICES = [
       "BAA (Business Associate Agreement) executed with all client practices",
       "Advanced billing software with multi-factor authentication",
     ],
-    img: "https://images.pexels.com/photos/7578815/pexels-photo-7578815.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    tag: "Client Care",
-    title: "Dedicated Client Support & Account Management",
-    desc: "Our commitment to your chiropractic practice goes beyond billing. Whether you need account updates, report access, assistance with a claim, or answers to billing questions — our dedicated team is responsive and easy to reach.",
+    tag: "Support",
+    title: "24/7 Client Support & Account Management",
+    desc: "Our commitment to your chiropractic practice extends around the clock. Whether you need account updates, report access, assistance with a claim, or answers to billing questions — our dedicated team is available 24/7.",
     list: [
       "Dedicated chiropractic billing specialist assigned to your practice",
-      "Responsive support via phone, email, and client portal",
+      "24/7 availability via phone, email, and client portal",
+      "Real-time claim status updates through your client dashboard",
       "Regular billing performance review calls with your team",
     ],
     img: "https://images.pexels.com/photos/8866726/pexels-photo-8866726.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -138,7 +139,7 @@ function ServiceMixChart() {
     { name: "Analytics & Reporting", value: 1 },
     { name: "Credentialing", value: 1 },
     { name: "Compliance & Security", value: 1 },
-    { name: "Client Support", value: 1 },
+    { name: "24/7 Support", value: 1 },
   ];
   const pieColors = [COLORS.teal, COLORS.navy, "#3FB3A3", "#7FD8C9", "#9FE6D4", "#C8E8E4", "#1E7068", "#5BC4B5", "#A8E0D2"];
 
@@ -168,7 +169,7 @@ export default function ServicesPage() {
         accent="Maximizes Every Dollar"
         desc="At MYRI Medical Billing, we offer a full spectrum of chiropractic revenue cycle management solutions — designed to improve cash flow, reduce claim denials, and ensure accurate, timely reimbursements for your chiropractic practice."
         img="/images/services-hero.jpg"
-        pos="center center"
+        pos="right 20%"
       />
       <StatsStrip stats={STATS} />
 
@@ -190,7 +191,7 @@ export default function ServicesPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10, minWidth: 200 }}>
               {["Serving all 50 states", "Secure EHR integration", "Remote onboarding in 5 days", "No office visit required"].map((t) => (
                 <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#3a4a48", background: "#fff", padding: "10px 14px", borderRadius: 10, border: "0.5px solid #eee" }}>
-                  <CheckCircle2 size={15} color={COLORS.teal} style={{ flexShrink: 0 }} /> {t}
+                  <span style={{ color: COLORS.teal, fontWeight: 700 }}>✓</span> {t}
                 </div>
               ))}
               <Link href="/contact" style={{ textAlign: "center", background: COLORS.teal, color: "#fff", padding: "10px 18px", borderRadius: 9, fontSize: 13, fontWeight: 600, textDecoration: "none" }}>
@@ -260,7 +261,7 @@ export default function ServicesPage() {
               <p style={{ fontSize: 13, color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}>
                 Each of the 9 core services on this page is included in our full-service plans — claims and coding,
                 insurance verification, payment posting, denial appeals, patient billing, analytics, credentialing,
-                compliance, and dedicated client support.
+                compliance, and round-the-clock support.
               </p>
             </div>
             <div style={{ background: "#fff", borderRadius: 14, padding: "16px 12px" }}>
@@ -270,6 +271,16 @@ export default function ServicesPage() {
           <style>{`@media (max-width: 860px) { .mix-grid { grid-template-columns: 1fr !important; } }`}</style>
         </div>
       </section>
+
+      {/* TESTIMONIAL */}
+      <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 60px", textAlign: "center" }}>
+        <div style={{ fontSize: 17, fontStyle: "italic", color: COLORS.navy, lineHeight: 1.6, maxWidth: 760, margin: "0 auto 14px" }}>
+          &quot;MYRI Medical Billing has significantly improved our revenue cycle. Their attention to detail and 24/7
+          support are invaluable. Since switching to MYRI, our denial rate has dropped dramatically and our
+          collections have increased.&quot;
+        </div>
+        <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 600 }}>— Dr. Mark Pagan, Heathrow Chiropractic, Lake Mary, FL (HQ)</div>
+      </div>
 
       <Footer />
     </div>

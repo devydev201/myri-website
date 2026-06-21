@@ -8,17 +8,6 @@ import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import { COLORS, SITE } from "../../lib/tokens";
 import AnimateOnView from "../../components/AnimateOnView";
-import StatsStrip from "../../components/StatsStrip";
-
-// Figures pulled directly from claims already stated in this page's copy
-// (24hr response commitment, 5-day onboarding, 30-day free audit,
-// 10 listed service areas) — no new numbers introduced.
-const STATS = [
-  { value: 24, suffix: "hr", label: "Inquiry Response Commitment" },
-  { value: 5, suffix: "", label: "Business Days to Full Onboarding" },
-  { value: 30, suffix: "d", label: "Free Billing Audit Included" },
-  { value: 10, suffix: "+", label: "Service Areas Covered Nationwide" },
-];
 
 const FAQS = [
   { q: "How quickly can MYRI onboard my chiropractic practice?", a: "Most chiropractic practices nationwide are fully onboarded and billing live within 5 business days. We handle complete remote setup — EHR integration (ChiroTouch, Jane, ECLIPSE, Genesis), payer configuration for your state, and team training — with minimal disruption to your practice regardless of location." },
@@ -102,7 +91,6 @@ export default function ContactPage() {
         img="/images/contact-hero.jpg"
         pos="center 20%"
       />
-      <StatsStrip stats={STATS} />
 
       {/* CONTACT WRAP */}
       <section style={{ padding: "64px 24px" }}>
@@ -143,6 +131,7 @@ export default function ContactPage() {
                 <span style={{ color: COLORS.mint, fontWeight: 500 }}>{time}</span>
               </div>
             ))}
+            <div style={{ marginTop: 6, fontSize: 11, color: "rgba(255,255,255,.4)" }}>* Emergency billing support available 24/7 via email</div>
 
             <div style={{ marginTop: 22, marginBottom: 8, fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.4)", letterSpacing: ".08em", textTransform: "uppercase" }}>HQ & Remote Service Coverage</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>

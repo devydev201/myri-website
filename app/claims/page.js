@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, LabelList, ResponsiveContainer } from "recharts";
-import { Phone, Mail, MapPin, CheckCircle2, Lock } from "lucide-react";
+import { Treemap, Tooltip, ResponsiveContainer } from "recharts";
+import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -39,15 +39,14 @@ const FOLLOWUP_CHECKS = [
 const BENEFITS = [
   { b: "Faster claim turnaround", d: "claims submitted within 24–48 hours, not days" },
   { b: "Reduced chiropractic claim denials", d: "our pre-submission audit catches errors before they cost you" },
+  { b: "Complete transparency", d: "detailed claim tracking with 24/7 client dashboard access" },
   { b: "Experienced chiropractic billing specialists", d: "CPC-certified coders who know DC billing" },
   { b: "Custom reports and insights", d: "monthly analytics to continuously improve your billing performance" },
   { b: "Florida personal injury & PIP billing", d: "specialized follow-up for auto accident chiropractic claims" },
 ];
 
-// Horizontal bar chart of where claim-tracking attention goes — proportional
-// to the 6 real follow-up checks the team performs daily, not invented denial
-// percentages. Horizontal bars give every label its own full-width row so
-// text stays large and legible at any screen size.
+// Treemap of where claim-tracking attention goes — proportional to the 6 real
+// follow-up checks the team performs daily, not invented denial percentages.
 function FollowUpFocusChart() {
   const data = [
     { name: "Daily Payer Monitoring", value: 22 },
@@ -56,35 +55,26 @@ function FollowUpFocusChart() {
     { name: "72hr Appeal Resubmission", value: 18 },
     { name: "Payer Dispute Resolution", value: 12 },
     { name: "AR Aging Management", value: 10 },
-  ].sort((a, b) => b.value - a.value);
-  const barColors = [COLORS.teal, "#3FB3A3", "#56C2AE", "#7FD8C9", "#9FE6D4", "#BCEDE0"];
+  ];
+  const treeColors = [COLORS.teal, "#3FB3A3", "#7FD8C9", "#9FE6D4", "#C8E8E4", "#E0F2EF"];
+
+  const TreemapCell = (props) => {
+    const { x, y, width, height, index, name, value } = props;
+    if (width < 2 || height < 2) return null;
+    const showLabel = width > 90 && height > 36;
+    return (
+      <g>
+        <rect x={x} y={y} width={width} height={height} style={{ fill: treeColors[index % treeColors.length], stroke: "#fff", strokeWidth: 3 }} />
+        {showLabel && <text x={x + 8} y={y + 20} fill={index < 2 ? "#fff" : COLORS.navy} fontSize={11} fontWeight={700}>{name}</text>}
+        {showLabel && <text x={x + 8} y={y + 36} fill={index < 2 ? "rgba(255,255,255,.85)" : COLORS.gray} fontSize={10}>{value}% of follow-up effort</text>}
+      </g>
+    );
+  };
 
   return (
-    <div style={{ width: "100%", height: 340 }}>
+    <div style={{ width: "100%", height: 280 }}>
       <ResponsiveContainer>
-        <BarChart data={data} layout="vertical" margin={{ top: 4, right: 36, left: 4, bottom: 4 }} barCategoryGap={18}>
-          <CartesianGrid horizontal={false} stroke={COLORS.grayLight} />
-          <XAxis type="number" domain={[0, 25]} tick={{ fontSize: 12, fill: COLORS.gray }} unit="%" axisLine={false} tickLine={false} />
-          <YAxis
-            type="category"
-            dataKey="name"
-            width={190}
-            tick={{ fontSize: 13, fill: COLORS.navy, fontWeight: 600 }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <Tooltip
-            cursor={{ fill: COLORS.tealLight }}
-            contentStyle={{ borderRadius: 10, border: `1px solid ${COLORS.grayLight}`, fontSize: 12 }}
-            formatter={(v) => [`${v}% of follow-up effort`, ""]}
-          />
-          <Bar dataKey="value" radius={[0, 6, 6, 0]} barSize={26}>
-            {data.map((entry, i) => (
-              <Cell key={entry.name} fill={barColors[i % barColors.length]} />
-            ))}
-            <LabelList dataKey="value" position="right" formatter={(v) => `${v}%`} style={{ fontSize: 13, fontWeight: 700, fill: COLORS.navy }} />
-          </Bar>
-        </BarChart>
+        <Treemap data={data} dataKey="value" nameKey="name" stroke="#fff" content={<TreemapCell />} />
       </ResponsiveContainer>
     </div>
   );
@@ -116,7 +106,7 @@ export default function ClaimsPage() {
         accent="Chiropractic Claim Submission"
         desc="At MYRI Medical Billing, we understand that efficient claim submission and proactive follow-up are the backbone of a successful chiropractic revenue cycle. Our goal is to ensure your claims are submitted accurately, tracked consistently, and paid promptly."
         img="/images/claims-hero.jpg"
-        pos="center center"
+        pos="center 25%"
       />
       <StatsStrip stats={STATS} />
 
@@ -197,7 +187,7 @@ export default function ClaimsPage() {
               <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 6 }}>Where Our Follow-Up Effort Goes</div>
               <h3 style={{ fontFamily: "Georgia, serif", fontSize: 20, color: COLORS.navy, margin: 0 }}>The 6 Pillars of Our Daily Claim Monitoring</h3>
             </div>
-            <AnimateOnView height={340}><FollowUpFocusChart /></AnimateOnView>
+            <AnimateOnView height={280}><FollowUpFocusChart /></AnimateOnView>
           </motion.div>
         </div>
       </section>
@@ -231,6 +221,16 @@ export default function ClaimsPage() {
         </div>
         <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } }`}</style>
       </section>
+
+      {/* TESTIMONIAL */}
+      <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 56px", textAlign: "center" }}>
+        <div style={{ fontSize: 17, fontStyle: "italic", color: COLORS.navy, lineHeight: 1.6, maxWidth: 760, margin: "0 auto 14px" }}>
+          &quot;I can&apos;t say enough about the outstanding service we received from MYRI Medical Billing. Their
+          team went above and beyond to meet our chiropractic practice&apos;s needs and exceeded our expectations on
+          claim follow-up and collections.&quot;
+        </div>
+        <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 600 }}>— Oliver Hartman, DC — Florida Chiropractic Practice</div>
+      </div>
 
       {/* CONTACT CTA + FORM */}
       <section style={{ padding: "0 24px 72px" }}>
@@ -297,9 +297,7 @@ export default function ClaimsPage() {
                 <button type="submit" disabled={claimsSubmitting} style={{ width: "100%", background: COLORS.teal, color: "#fff", border: "none", padding: 13, borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: claimsSubmitting ? "default" : "pointer", opacity: claimsSubmitting ? 0.7 : 1 }}>
                   {claimsSubmitting ? "Sending..." : "Get My Free Claim Audit →"}
                 </button>
-                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
-                  <Lock size={11} color={COLORS.gray} /> HIPAA-compliant · No obligation · Response within 24 hours
-                </p>
+                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10 }}>🔒 HIPAA-compliant · No obligation · Response within 24 hours</p>
               </form>
             )}
           </div>

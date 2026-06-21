@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Target, ShieldCheck, MessageCircle, TrendingUp, Users, Zap, CheckCircle2, Lock, ClipboardList, Building2, Stethoscope } from "lucide-react";
+import { Target, ShieldCheck, MessageCircle, TrendingUp, Users, Zap, CheckCircle2 } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -27,11 +27,11 @@ const VALUES = [
 ];
 
 const CERTS = [
-  { Icon: Lock, t: "HIPAA Compliant", d: "Full HIPAA compliance in all billing operations and data handling" },
-  { Icon: ClipboardList, t: "Certified Coders", d: "CPC-certified chiropractic billing and coding professionals" },
-  { Icon: Building2, t: "Florida LLC", d: "Registered Florida LLC — licensed to serve all FL chiropractic practices" },
-  { Icon: ShieldCheck, t: "Errors & Omissions", d: "Professional liability insurance protecting your practice" },
-  { Icon: Stethoscope, t: "Medicare Enrolled", d: "Authorized Medicare billing provider for chiropractic practices" },
+  { ico: "🔒", t: "HIPAA Compliant", d: "Full HIPAA compliance in all billing operations and data handling" },
+  { ico: "📋", t: "Certified Coders", d: "CPC-certified chiropractic billing and coding professionals" },
+  { ico: "🏛️", t: "Florida LLC", d: "Registered Florida LLC — licensed to serve all FL chiropractic practices" },
+  { ico: "🛡️", t: "Errors & Omissions", d: "Professional liability insurance protecting your practice" },
+  { ico: "⚕️", t: "Medicare Enrolled", d: "Authorized Medicare billing provider for chiropractic practices" },
 ];
 
 const TIMELINE = [
@@ -160,7 +160,7 @@ export default function AboutPage() {
               {[
                 "Fast turnaround — claims submitted within 24–48 hours",
                 "Denial appeals filed within 72 hours of every rejection",
-                "Monthly performance reports and real-time dashboard access",
+                "Monthly performance reports and 24/7 dashboard access",
                 "Dedicated chiropractic billing specialist assigned to your practice",
                 "No long-term contracts — month-to-month agreements",
               ].map((item) => (
@@ -213,7 +213,7 @@ export default function AboutPage() {
             <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }} whileHover={{ background: "rgba(42,157,143,.12)" }}
               style={{ textAlign: "center", padding: "22px 14px", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12 }}>
-              <c.Icon size={28} color={COLORS.mint} style={{ marginBottom: 9 }} />
+              <div style={{ fontSize: 30, marginBottom: 9 }}>{c.ico}</div>
               <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>{c.t}</div>
               <div style={{ fontSize: 12, color: "rgba(255,255,255,.5)", marginTop: 4, lineHeight: 1.5 }}>{c.d}</div>
             </motion.div>

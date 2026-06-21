@@ -3,23 +3,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { CheckCircle2, Phone, Mail, PiggyBank, TrendingUp, Clock, Lock } from "lucide-react";
+import { CheckCircle2, Phone, Mail } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
 import { COLORS, SITE } from "../../lib/tokens";
 import AnimateOnView from "../../components/AnimateOnView";
-import StatsStrip from "../../components/StatsStrip";
-
-// Figures pulled directly from claims already stated in this page's copy
-// (4–7% fee range, 15–25% collection increase, 24hr response, 5-day onboarding)
-// — no new numbers introduced.
-const STATS = [
-  { value: 7, suffix: "%", label: "Top of Percentage-Based Fee Range" },
-  { value: 25, suffix: "%", label: "Avg. Collections Increase in 90 Days" },
-  { value: 24, suffix: "hr", label: "Custom Quote Response Time" },
-  { value: 0, suffix: "", label: "Setup Fees or Long-Term Contracts" },
-];
 
 const PLANS = [
   {
@@ -47,7 +36,7 @@ const PLANS = [
       "Personal injury & PIP billing",
       "Medicare chiropractic billing",
       "Dedicated billing specialist",
-      "Dedicated support & dashboard access",
+      "24/7 support & dashboard access",
     ],
     featured: true,
   },
@@ -123,7 +112,6 @@ export default function PricingPage() {
         img="/images/pricing-hero.jpg"
         pos="center center"
       />
-      <StatsStrip stats={STATS} />
 
       {/* PRICING CARDS */}
       <section style={{ padding: "64px 24px 0" }}>
@@ -260,14 +248,14 @@ export default function PricingPage() {
           </motion.div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }} className="save-grid">
             {[
-              { Icon: PiggyBank, t: "Eliminate Staff Overhead", d: "No salary, benefits, payroll taxes, or training costs for in-house billing staff. MYRI's fee is typically less than one part-time biller." },
-              { Icon: TrendingUp, t: "Increase Collections", d: "Our chiropractic billing expertise and denial management typically increase collections by 15–25% in the first 90 days." },
-              { Icon: Clock, t: "Save DC and Staff Time", d: "Your time and your team's time is better spent on patient care, not billing — zero billing burden on your staff." },
-              { Icon: Lock, t: "Reduce Compliance Risk", d: "Our certified coders and HIPAA-compliant systems reduce your audit risk and compliance exposure." },
+              { ico: "💰", t: "Eliminate Staff Overhead", d: "No salary, benefits, payroll taxes, or training costs for in-house billing staff. MYRI's fee is typically less than one part-time biller." },
+              { ico: "📈", t: "Increase Collections", d: "Our chiropractic billing expertise and denial management typically increase collections by 15–25% in the first 90 days." },
+              { ico: "⏱️", t: "Save DC and Staff Time", d: "Your time and your team's time is better spent on patient care, not billing — zero billing burden on your staff." },
+              { ico: "🔒", t: "Reduce Compliance Risk", d: "Our certified coders and HIPAA-compliant systems reduce your audit risk and compliance exposure." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 20 }}>
-                <c.Icon size={26} color={COLORS.teal} style={{ marginBottom: 10 }} />
+                <div style={{ fontSize: 26, marginBottom: 10 }}>{c.ico}</div>
                 <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{c.t}</div>
                 <div style={{ fontSize: 12, color: COLORS.gray, lineHeight: 1.6 }}>{c.d}</div>
               </motion.div>
@@ -355,12 +343,14 @@ export default function PricingPage() {
                     <option>Not sure — need consultation</option>
                   </select>
                 </div>
+                <div style={{ marginBottom: 16 }}>
+                  <label style={labelStyle}>Additional Notes</label>
+                  <textarea name="additional_notes" rows={3} style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }} placeholder="Anything else we should know about your practice or billing needs?" />
+                </div>
                 <button type="submit" disabled={quoteSubmitting} style={{ width: "100%", background: COLORS.teal, color: "#fff", border: "none", padding: 13, borderRadius: 9, fontWeight: 600, fontSize: 14, cursor: quoteSubmitting ? "default" : "pointer", opacity: quoteSubmitting ? 0.7 : 1 }}>
                   {quoteSubmitting ? "Sending..." : "Request My Custom Quote →"}
                 </button>
-                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 5 }}>
-                  <Lock size={11} color={COLORS.gray} /> HIPAA-compliant · No obligation · Response within 24 hours
-                </p>
+                <p style={{ fontSize: 10.5, color: COLORS.gray, textAlign: "center", marginTop: 10 }}>🔒 HIPAA-compliant · No obligation · Response within 24 hours</p>
               </form>
             )}
           </div>
