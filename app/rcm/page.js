@@ -184,12 +184,12 @@ export default function RCMPage() {
             src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }
-          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
-          .img-anim { animation: imgPulse 6s ease-in-out infinite; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+          .img-anim { animation: imgPulse 5s ease-in-out infinite; }
           .img-anim-wrap { position: relative; overflow: hidden; }
           .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
           .img-anim-wrap:hover::after { transform:translateX(100%); }
-          .img-anim-wrap:hover .img-anim { transform: scale(1.07); animation-play-state: paused; }
+          .img-anim-wrap:hover .img-anim { animation-play-state: running; }
         `}</style>
       </section>
 
