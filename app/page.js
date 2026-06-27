@@ -491,22 +491,35 @@ export default function HomePage() {
             <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 10 }}>Simple Onboarding Process</div>
             <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: 0 }}>Up and Running in <em>Less Than a Week</em></h2>
           </motion.div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} className="steps-grid">
-            {[
-              { n: 1, t: "Free Billing Audit", d: "We review 30 days of your claims and show you exactly where revenue is leaking — zero cost, zero obligation." },
-              { n: 2, t: "Custom Setup", d: "We integrate seamlessly with your EHR (ChiroTouch, Jane, ECLIPSE, Genesis) via secure remote connection, configure your state-specific payers, and map your exact workflows." },
-              { n: 3, t: "We Handle Billing", d: "Every claim is reviewed, coded, and submitted. You treat patients anywhere in the USA. We handle billing remotely from Lake Mary, FL." },
-              { n: 4, t: "Track Your Revenue", d: "Monthly reports and 24/7 dashboard access give full visibility into collections, denials, and claim status." },
-            ].map((s, i) => (
-              <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
-                transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center" }}>
-                <div style={{ width: 50, height: 50, borderRadius: "50%", background: COLORS.teal, color: "#fff", fontFamily: "Georgia, serif", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>{s.n}</div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 8 }}>{s.t}</div>
-                <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{s.d}</div>
-              </motion.div>
-            ))}
+          {/* Animated progress connector line */}
+          <div style={{ position: "relative", marginBottom: 32 }} className="steps-connector-wrap">
+            <div style={{ position: "absolute", top: 25, left: "12.5%", right: "12.5%", height: 3, background: COLORS.grayLight, borderRadius: 4 }} className="steps-connector-bg" />
+            <motion.div
+              style={{ position: "absolute", top: 25, left: "12.5%", height: 3, background: `linear-gradient(90deg, ${COLORS.teal}, ${COLORS.mint})`, borderRadius: 4, width: "75%" }}
+              animate={{ scaleX: [0, 1, 1, 0], originX: 0 }}
+              transition={{ duration: 2.8, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.6, times: [0, 0.5, 0.8, 1] }}
+              className="steps-connector-anim"
+            />
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 18 }} className="steps-grid">
+              {[
+                { n: 1, t: "Free Billing Audit", d: "We review 30 days of your claims and show you exactly where revenue is leaking — zero cost, zero obligation." },
+                { n: 2, t: "Custom Setup", d: "We integrate seamlessly with your EHR (ChiroTouch, Jane, ECLIPSE, Genesis) via secure remote connection, configure your state-specific payers, and map your exact workflows." },
+                { n: 3, t: "We Handle Billing", d: "Every claim is reviewed, coded, and submitted. You treat patients anywhere in the USA. We handle billing remotely from Lake Mary, FL." },
+                { n: 4, t: "Track Your Revenue", d: "Monthly reports and 24/7 dashboard access give full visibility into collections, denials, and claim status." },
+              ].map((s, i) => (
+                <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center" }}>
+                  <div style={{ width: 50, height: 50, borderRadius: "50%", background: COLORS.teal, color: "#fff", fontFamily: "Georgia, serif", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px", position: "relative", zIndex: 1 }}>{s.n}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 8 }}>{s.t}</div>
+                  <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{s.d}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-          <style>{`@media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr !important; } }`}</style>
+          <style>{`
+            @media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr 1fr !important; } .steps-connector-wrap .steps-connector-bg, .steps-connector-wrap .steps-connector-anim { display: none; } }
+            @media (max-width: 540px) { .steps-grid { grid-template-columns: 1fr !important; } }
+          `}</style>
         </div>
       </section>
 

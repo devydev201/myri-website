@@ -112,7 +112,7 @@ const SERVICES = [
       "BAA (Business Associate Agreement) executed with all client practices",
       "Advanced billing software with multi-factor authentication",
     ],
-    img: "https://images.pexels.com/photos/60504/pexels-photo-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "Support",

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Treemap, Tooltip, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, ResponsiveContainer, LabelList } from "recharts";
 import { Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
@@ -45,8 +45,7 @@ const BENEFITS = [
   { b: "Florida personal injury & PIP billing", d: "specialized follow-up for auto accident chiropractic claims" },
 ];
 
-// Treemap of where claim-tracking attention goes — proportional to the 6 real
-// follow-up checks the team performs daily, not invented denial percentages.
+// Horizontal bar chart showing where claim-tracking effort is allocated
 function FollowUpFocusChart() {
   const data = [
     { name: "Daily Payer Monitoring", value: 22 },
@@ -56,25 +55,23 @@ function FollowUpFocusChart() {
     { name: "Payer Dispute Resolution", value: 12 },
     { name: "AR Aging Management", value: 10 },
   ];
-  const treeColors = [COLORS.teal, "#3FB3A3", "#7FD8C9", "#9FE6D4", "#C8E8E4", "#E0F2EF"];
-
-  const TreemapCell = (props) => {
-    const { x, y, width, height, index, name, value } = props;
-    if (width < 2 || height < 2) return null;
-    const showLabel = width > 90 && height > 36;
-    return (
-      <g>
-        <rect x={x} y={y} width={width} height={height} style={{ fill: treeColors[index % treeColors.length], stroke: "#fff", strokeWidth: 3 }} />
-        {showLabel && <text x={x + 8} y={y + 20} fill={index < 2 ? "#fff" : COLORS.navy} fontSize={11} fontWeight={700}>{name}</text>}
-        {showLabel && <text x={x + 8} y={y + 36} fill={index < 2 ? "rgba(255,255,255,.85)" : COLORS.gray} fontSize={10}>{value}% of follow-up effort</text>}
-      </g>
-    );
-  };
+  const barColors = [COLORS.teal, "#2DB09F", "#3FBDAB", "#5ECFBE", "#7FD8C9", "#A8E8DF"];
 
   return (
     <div style={{ width: "100%", height: 280 }}>
       <ResponsiveContainer>
-        <Treemap data={data} dataKey="value" nameKey="name" stroke="#fff" content={<TreemapCell />} />
+        <BarChart data={data} layout="vertical" margin={{ top: 4, right: 56, left: 8, bottom: 4 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="#E5EEEC" horizontal={false} />
+          <XAxis type="number" domain={[0, 25]} tick={{ fontSize: 10, fill: COLORS.gray }} axisLine={false} tickLine={false} unit="%" />
+          <YAxis type="category" dataKey="name" width={170} tick={{ fontSize: 11, fill: COLORS.navy, fontWeight: 600 }} axisLine={false} tickLine={false} />
+          <Tooltip formatter={(v) => [`${v}%`, "Follow-up effort"]} contentStyle={{ borderRadius: 10, border: `1px solid ${COLORS.grayLight}`, fontSize: 12 }} />
+          <Bar dataKey="value" radius={[0, 6, 6, 0]} barSize={26}>
+            {data.map((_, i) => (
+              <Cell key={i} fill={barColors[i]} />
+            ))}
+            <LabelList dataKey="value" position="right" formatter={(v) => `${v}%`} style={{ fontSize: 11, fontWeight: 700, fill: COLORS.navy }} />
+          </Bar>
+        </BarChart>
       </ResponsiveContainer>
     </div>
   );

@@ -235,11 +235,19 @@ export default function AboutPage() {
               practices.
             </p>
             <div style={{ position: "relative", paddingLeft: 28 }}>
-              <div style={{ position: "absolute", left: 8, top: 0, bottom: 0, width: 2, background: `linear-gradient(${COLORS.teal}, ${COLORS.tealLight})` }} />
+              {/* Static track */}
+              <div style={{ position: "absolute", left: 8, top: 0, bottom: 0, width: 2, background: COLORS.grayLight }} />
+              {/* Animated looping fill */}
+              <motion.div
+                style={{ position: "absolute", left: 8, top: 0, width: 2, background: `linear-gradient(${COLORS.teal}, ${COLORS.mint})`, borderRadius: 2, originY: 0 }}
+                animate={{ scaleY: [0, 1, 1, 0], originY: [0, 0, 0, 0] }}
+                transition={{ duration: 3.2, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.5, times: [0, 0.5, 0.8, 1] }}
+                className="timeline-anim-line"
+              />
               {TIMELINE.map((item, i) => (
                 <motion.div key={item.year} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }} style={{ position: "relative", marginBottom: 26 }}>
-                  <div style={{ position: "absolute", left: -24, top: 4, width: 14, height: 14, background: COLORS.teal, border: `3px solid ${COLORS.tealLight}`, borderRadius: "50%" }} />
+                  <div style={{ position: "absolute", left: -24, top: "50%", transform: "translateY(-50%)", width: 14, height: 14, background: COLORS.teal, border: `3px solid ${COLORS.tealLight}`, borderRadius: "50%", zIndex: 1 }} />
                   <div style={{ fontSize: 11, fontWeight: 700, color: COLORS.teal, marginBottom: 3, letterSpacing: ".05em", textTransform: "uppercase" }}>{item.year}</div>
                   <div style={{ fontWeight: 700, fontSize: 14, color: COLORS.navy, marginBottom: 5 }}>{item.t}</div>
                   <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{item.d}</div>
@@ -273,7 +281,7 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-        <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } } .timeline-anim-line { height: 100%; }`}</style>
       </section>
 
       <StatsStrip stats={STATS} />
