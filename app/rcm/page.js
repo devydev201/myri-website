@@ -126,7 +126,9 @@ export default function RCMPage() {
                 Our comprehensive chiropractic RCM process covers every step of your practice&apos;s financial cycle
                 — managed by dedicated billing specialists who know chiropractic billing inside and out.
               </p>
-              <img src="https://images.pexels.com/photos/9034966/pexels-photo-9034966.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI comprehensive chiropractic RCM process diagram" style={{ width: "100%", borderRadius: 14, boxShadow: "0 8px 24px rgba(13,51,73,.12)", marginBottom: 20, objectFit: "cover" }} />
+              <div className="img-anim-wrap" style={{ borderRadius: 14, overflow: "hidden", boxShadow: "0 8px 24px rgba(13,51,73,.12)", marginBottom: 20 }}>
+                <img src="https://images.pexels.com/photos/9034966/pexels-photo-9034966.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI comprehensive chiropractic RCM process diagram" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+              </div>
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: 20, boxShadow: "0 8px 28px rgba(13,51,73,.06)" }}>
                 <div style={{ fontSize: 12.5, fontWeight: 700, color: COLORS.navy, marginBottom: 2 }}>Collections Index Through the RCM Process</div>
@@ -181,7 +183,14 @@ export default function RCMPage() {
           <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
         </div>
-        <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+          .img-anim { animation: imgPulse 6s ease-in-out infinite; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+          .img-anim-wrap { position: relative; overflow: hidden; }
+          .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
+          .img-anim-wrap:hover::after { transform:translateX(100%); }
+          .img-anim-wrap:hover .img-anim { transform: scale(1.07); animation-play-state: paused; }
+        `}</style>
       </section>
 
       {/* TESTIMONIAL */}

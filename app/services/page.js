@@ -224,7 +224,9 @@ export default function ServicesPage() {
               className="service-block"
             >
               <div style={{ order: i % 2 === 0 ? 1 : 2, borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 24px rgba(13,51,73,.1)" }}>
-                <img src={s.img} alt={s.title} style={{ width: "100%", height: 240, objectFit: "cover", display: "block" }} />
+                <div className="img-anim-wrap" style={{ overflow: "hidden" }}>
+                  <img src={s.img} alt={s.title} className="img-anim" style={{ width: "100%", height: 240, objectFit: "cover", display: "block" }} />
+                </div>
               </div>
               <div style={{ order: i % 2 === 0 ? 2 : 1 }}>
                 <div style={{ display: "inline-block", background: COLORS.tealLight, color: COLORS.tealDark, fontSize: 10.5, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase", padding: "3px 12px", borderRadius: 20, marginBottom: 12 }}>
@@ -247,7 +249,14 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </div>
-        <style>{`@media (max-width: 860px) { .service-block { grid-template-columns: 1fr !important; } .service-block > div { order: unset !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .service-block { grid-template-columns: 1fr !important; } .service-block > div { order: unset !important; } }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+          .img-anim { animation: imgPulse 6s ease-in-out infinite; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+          .img-anim-wrap { position: relative; overflow: hidden; }
+          .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
+          .img-anim-wrap:hover::after { transform:translateX(100%); }
+          .img-anim-wrap:hover .img-anim { transform: scale(1.07); animation-play-state: paused; }
+        `}</style>
       </section>
 
       {/* SERVICE MIX CHART */}

@@ -126,7 +126,9 @@ export default function AboutPage() {
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
-            <img src="https://images.pexels.com/photos/2422288/pexels-photo-2422288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing team about us chiropractic billing Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+            <div className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+              <img src="https://images.pexels.com/photos/2422288/pexels-photo-2422288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing team about us chiropractic billing Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            </div>
             <div style={{ position: "absolute", bottom: -16, right: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
               <div style={{ fontSize: 11.5, marginTop: 3, opacity: 0.9 }}>Chiropractic<br />Billing Focused</div>
@@ -174,8 +176,10 @@ export default function AboutPage() {
               Contact Our Team
             </Link>
           </motion.div>
-          <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing operations" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+            <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing operations" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+          </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -283,7 +287,14 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-        <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } } .timeline-anim-line { height: 100%; }`}</style>
+        <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } } .timeline-anim-line { height: 100%; }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+          .img-anim { animation: imgPulse 6s ease-in-out infinite; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+          .img-anim-wrap { position: relative; overflow: hidden; }
+          .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
+          .img-anim-wrap:hover::after { transform:translateX(100%); }
+          .img-anim-wrap:hover .img-anim { transform: scale(1.07); animation-play-state: paused; }
+        `}</style>
       </section>
 
       <StatsStrip stats={STATS} />

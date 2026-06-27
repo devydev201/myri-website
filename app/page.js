@@ -336,7 +336,9 @@ export default function HomePage() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
-            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)" }} />
+            <div className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" className="img-anim" style={{ width: "100%", display: "block" }} />
+            </div>
             <div style={{ position: "absolute", bottom: -16, left: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
               <div style={{ fontSize: 12, marginTop: 3, opacity: 0.9 }}>HIPAA Compliant<br />Operations</div>
@@ -458,7 +460,9 @@ export default function HomePage() {
               <motion.div key={s.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -6 }}>
                 <Link href={s.href} style={{ display: "block", textDecoration: "none", background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, overflow: "hidden" }}>
-                  <img src={s.img} alt={s.alt} style={{ width: "100%", height: 180, objectFit: "cover", display: "block" }} />
+                  <div className="img-anim-wrap" style={{ overflow: "hidden" }}>
+                    <img src={s.img} alt={s.alt} className="img-anim" style={{ width: "100%", height: 180, objectFit: "cover", display: "block" }} />
+                  </div>
                   <div style={{ padding: 18 }}>
                     <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{s.name}</div>
                     <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6, marginBottom: 10 }}>{s.desc}</div>
@@ -624,7 +628,14 @@ export default function HomePage() {
             )}
           </div>
         </div>
-        <style>{`@media (max-width: 860px) { .audit-grid { grid-template-columns: 1fr !important; } .form-row { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`@media (max-width: 860px) { .audit-grid { grid-template-columns: 1fr !important; } .form-row { grid-template-columns: 1fr !important; } }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+          .img-anim { animation: imgPulse 6s ease-in-out infinite; transition: transform 0.6s cubic-bezier(.22,1,.36,1); }
+          .img-anim-wrap { position: relative; overflow: hidden; }
+          .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
+          .img-anim-wrap:hover::after { transform:translateX(100%); }
+          .img-anim-wrap:hover .img-anim { transform: scale(1.07); animation-play-state: paused; }
+        `}</style>
       </section>
 
       {/* FAQ */}
