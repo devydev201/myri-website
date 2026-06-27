@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { Target, ShieldCheck, MessageCircle, TrendingUp, Users, Zap, CheckCircle2 } from "lucide-react";
+import { Target, ShieldCheck, MessageCircle, TrendingUp, Users, Zap, CheckCircle2, Lock, ClipboardList, Building2, Shield, Stethoscope } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -27,11 +27,11 @@ const VALUES = [
 ];
 
 const CERTS = [
-  { ico: "🔒", t: "HIPAA Compliant", d: "Full HIPAA compliance in all billing operations and data handling" },
-  { ico: "📋", t: "Certified Coders", d: "CPC-certified chiropractic billing and coding professionals" },
-  { ico: "🏛️", t: "Florida LLC", d: "Registered Florida LLC — licensed to serve all FL chiropractic practices" },
-  { ico: "🛡️", t: "Errors & Omissions", d: "Professional liability insurance protecting your practice" },
-  { ico: "⚕️", t: "Medicare Enrolled", d: "Authorized Medicare billing provider for chiropractic practices" },
+  { Icon: Lock, t: "HIPAA Compliant", d: "Full HIPAA compliance in all billing operations and data handling" },
+  { Icon: ClipboardList, t: "Certified Coders", d: "CPC-certified chiropractic billing and coding professionals" },
+  { Icon: Building2, t: "Florida LLC", d: "Registered Florida LLC — licensed to serve all FL chiropractic practices" },
+  { Icon: Shield, t: "Errors & Omissions", d: "Professional liability insurance protecting your practice" },
+  { Icon: Stethoscope, t: "Medicare Enrolled", d: "Authorized Medicare billing provider for chiropractic practices" },
 ];
 
 const TIMELINE = [
@@ -194,8 +194,8 @@ export default function AboutPage() {
               <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.07, duration: 0.5 }} whileHover={{ y: -4 }}
                 style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 14, padding: 22 }}>
-                <div style={{ width: 46, height: 46, borderRadius: 12, background: COLORS.tealLight, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                  <v.Icon size={22} color={COLORS.teal} strokeWidth={1.8} />
+                <div style={{ width: 46, height: 46, borderRadius: 12, background: COLORS.navy, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                  <v.Icon size={22} color={COLORS.mint} strokeWidth={1.8} />
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.navy, marginBottom: 6 }}>{v.title}</div>
                 <div style={{ fontSize: 12.5, color: COLORS.gray, lineHeight: 1.6 }}>{v.desc}</div>
@@ -213,7 +213,9 @@ export default function AboutPage() {
             <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }} whileHover={{ background: "rgba(42,157,143,.12)" }}
               style={{ textAlign: "center", padding: "22px 14px", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12 }}>
-              <div style={{ fontSize: 30, marginBottom: 9 }}>{c.ico}</div>
+              <div style={{ width: 48, height: 48, borderRadius: 12, background: "rgba(13,51,73,.7)", border: "1px solid rgba(127,216,201,.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 12px" }}>
+                <c.Icon size={22} color="#7FD8C9" strokeWidth={1.6} />
+              </div>
               <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>{c.t}</div>
               <div style={{ fontSize: 12, color: "rgba(255,255,255,.5)", marginTop: 4, lineHeight: 1.5 }}>{c.d}</div>
             </motion.div>

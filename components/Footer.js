@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { COLORS, SITE } from "../lib/tokens";
 
 const COLS = [
@@ -66,13 +67,13 @@ export default function Footer() {
               your entire chiropractic revenue cycle for practices across all 50 states. No office visit ever required.
             </div>
             <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 6 }}>
-              <a href={SITE.phoneHref} style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", textDecoration: "none" }}>
-                📞 {SITE.phone}
+              <a href={SITE.phoneHref} style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                <Phone size={13} color="rgba(255,255,255,.6)" /> {SITE.phone}
               </a>
-              <a href={SITE.emailHref} style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", textDecoration: "none" }}>
-                ✉ {SITE.email}
+              <a href={SITE.emailHref} style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                <Mail size={13} color="rgba(255,255,255,.6)" /> {SITE.email}
               </a>
-              <span style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)" }}>📍 {SITE.address}</span>
+              <span style={{ fontSize: 11.5, color: "rgba(255,255,255,.6)", display: "flex", alignItems: "center", gap: 6 }}><MapPin size={13} color="rgba(255,255,255,.6)" /> {SITE.address}</span>
             </div>
           </div>
           {COLS.map((col) => (

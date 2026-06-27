@@ -191,7 +191,7 @@ export default function ServicesPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 10, minWidth: 200 }}>
               {["Serving all 50 states", "Secure EHR integration", "Remote onboarding in 5 days", "No office visit required"].map((t) => (
                 <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#3a4a48", background: "#fff", padding: "10px 14px", borderRadius: 10, border: "0.5px solid #eee" }}>
-                  <span style={{ color: COLORS.teal, fontWeight: 700 }}>✓</span> {t}
+                  <CheckCircle2 size={14} color={COLORS.teal} style={{ flexShrink: 0, marginTop: 2 }} /> {t}
                 </div>
               ))}
               <Link href="/contact" style={{ textAlign: "center", background: COLORS.teal, color: "#fff", padding: "10px 18px", borderRadius: 9, fontSize: 13, fontWeight: 600, textDecoration: "none" }}>
