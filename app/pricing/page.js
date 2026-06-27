@@ -219,8 +219,10 @@ export default function PricingPage() {
               </tbody>
             </table>
           </motion.div>
-          <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing pricing compliance Lake Mary Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+            <img src="https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing pricing compliance Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+          </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .compliance-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -357,7 +359,13 @@ export default function PricingPage() {
             )}
           </div>
         </div>
-        <style>{`@media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`@media (max-width: 900px) { .quote-grid { grid-template-columns: 1fr !important; } }
+          @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+          .img-anim { animation: imgPulse 5s ease-in-out infinite; }
+          .img-anim-wrap { position: relative; overflow: hidden; }
+          .img-anim-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(120deg,transparent 25%,rgba(42,157,143,.16) 50%,transparent 75%); transform:translateX(-100%); transition:transform 0.7s ease; pointer-events:none; }
+          .img-anim-wrap:hover::after { transform:translateX(100%); }
+        `}</style>
       </section>
 
       <Footer />

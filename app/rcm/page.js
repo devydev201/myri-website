@@ -109,8 +109,10 @@ export default function RCMPage() {
               Contact Us About RCM
             </Link>
           </motion.div>
-          <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="https://images.pexels.com/photos/8297447/pexels-photo-8297447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic revenue cycle management RCM process Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+            <img src="https://images.pexels.com/photos/8297447/pexels-photo-8297447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic revenue cycle management RCM process Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+          </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
       </section>
@@ -180,8 +182,10 @@ export default function RCMPage() {
               <Link href="/pricing" style={{ border: `1.5px solid ${COLORS.teal}`, color: COLORS.teal, padding: "11px 20px", borderRadius: 9, fontWeight: 600, fontSize: 13.5, textDecoration: "none" }}>View Pricing</Link>
             </div>
           </motion.div>
-          <motion.img initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" style={{ width: "100%", borderRadius: 18, boxShadow: "0 16px 40px rgba(13,51,73,.18)", objectFit: "cover" }} />
+          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
+            <img src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+          </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }
           @keyframes imgPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
