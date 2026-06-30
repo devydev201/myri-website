@@ -23,7 +23,6 @@ const SUBMISSION_CHECKS = [
   "Apply accurate CPT codes (98940, 98941, 98942) and ICD-10-CM diagnosis codes",
   "Conduct pre-submission audit on every claim to prevent errors and denials",
   "Submit clean claims electronically through certified clearinghouse within 24–48 hours",
-  "Track every claim in real time through payer portals and clearinghouse reports",
   "Apply HCPCS codes and modifiers for ancillary services (therapy, decompression, laser)",
 ];
 
@@ -39,7 +38,7 @@ const FOLLOWUP_CHECKS = [
 const BENEFITS = [
   { b: "Faster claim turnaround", d: "claims submitted within 24–48 hours, not days" },
   { b: "Reduced chiropractic claim denials", d: "our pre-submission audit catches errors before they cost you" },
-  { b: "Complete transparency", d: "detailed claim tracking with 24/7 client dashboard access" },
+  { b: "Complete transparency", d: "detailed claim tracking and clear communication every step of the way" },
   { b: "Experienced chiropractic billing specialists", d: "CPC-certified coders who know DC billing" },
   { b: "Custom reports and insights", d: "monthly analytics to continuously improve your billing performance" },
   { b: "Florida personal injury & PIP billing", d: "specialized follow-up for auto accident chiropractic claims" },
@@ -224,16 +223,6 @@ export default function ClaimsPage() {
         </div>
         <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } }`}</style>
       </section>
-
-      {/* TESTIMONIAL */}
-      <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 24px 56px", textAlign: "center" }}>
-        <div style={{ fontSize: 17, fontStyle: "italic", color: COLORS.navy, lineHeight: 1.6, maxWidth: 760, margin: "0 auto 14px" }}>
-          &quot;I can&apos;t say enough about the outstanding service we received from MYRI Medical Billing. Their
-          team went above and beyond to meet our chiropractic practice&apos;s needs and exceeded our expectations on
-          claim follow-up and collections.&quot;
-        </div>
-        <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 600 }}>— Oliver Hartman, DC — Florida Chiropractic Practice</div>
-      </div>
 
       {/* CONTACT CTA + FORM */}
       <section style={{ padding: "0 24px 72px" }}>

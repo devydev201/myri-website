@@ -513,7 +513,7 @@ export default function HomePage() {
                 { n: 1, t: "Free Billing Audit", d: "We review 30 days of your claims and show you exactly where revenue is leaking — zero cost, zero obligation." },
                 { n: 2, t: "Custom Setup", d: "We integrate seamlessly with your EHR (ChiroTouch, Jane, ECLIPSE, Genesis) via secure remote connection, configure your state-specific payers, and map your exact workflows." },
                 { n: 3, t: "We Handle Billing", d: "Every claim is reviewed, coded, and submitted. You treat patients anywhere in the USA. We handle billing remotely from Lake Mary, FL." },
-                { n: 4, t: "Track Your Revenue", d: "Monthly reports and 24/7 dashboard access give full visibility into collections, denials, and claim status." },
+                { n: 4, t: "Track Your Revenue", d: "Monthly reports give full visibility into collections, denials, and claim status." },
               ].map((s, i) => (
                 <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }}
                   transition={{ delay: i * 0.1, duration: 0.5 }} style={{ textAlign: "center" }}>
