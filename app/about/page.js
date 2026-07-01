@@ -127,7 +127,7 @@ export default function AboutPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
             <div className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-              <img src="https://images.pexels.com/photos/2422288/pexels-photo-2422288.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing team about us chiropractic billing Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="MYRI Medical Billing team about us chiropractic billing Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
             </div>
             <div style={{ position: "absolute", bottom: -16, right: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
