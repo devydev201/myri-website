@@ -61,17 +61,27 @@ const PLANS = [
 function PlanComparisonChart() {
   const data = [
     { metric: "Bundled Services", "Percentage-Based": 60, "Comprehensive Plan": 100, "Per-Claim": 50 },
-    { metric: "Denial Mgmt Included", "Percentage-Based": 90, "Comprehensive Plan": 100, "Per-Claim": 80 },
+    { metric: "Denial Mgmt", "Percentage-Based": 90, "Comprehensive Plan": 100, "Per-Claim": 80 },
     { metric: "Credentialing", "Percentage-Based": 40, "Comprehensive Plan": 100, "Per-Claim": 30 },
     { metric: "Cost Predictability", "Percentage-Based": 50, "Comprehensive Plan": 70, "Per-Claim": 95 },
-    { metric: "Best for Low Volume", "Percentage-Based": 55, "Comprehensive Plan": 50, "Per-Claim": 95 },
+    { metric: "Low Volume", "Percentage-Based": 55, "Comprehensive Plan": 50, "Per-Claim": 95 },
   ];
+  const renderTick = ({ payload, x, y, textAnchor }) => {
+    const words = String(payload.value).split(" ");
+    return (
+      <text x={x} y={y} textAnchor={textAnchor} fill={COLORS.gray} fontSize={10}>
+        {words.map((w, i) => (
+          <tspan key={i} x={x} dy={i === 0 ? 0 : 11}>{w}</tspan>
+        ))}
+      </text>
+    );
+  };
   return (
-    <div style={{ width: "100%", height: 320 }}>
+    <div style={{ width: "100%", height: 340 }}>
       <ResponsiveContainer>
-        <RadarChart data={data} outerRadius={105}>
+        <RadarChart data={data} outerRadius="62%" margin={{ top: 20, right: 60, bottom: 20, left: 60 }}>
           <PolarGrid stroke="#E5EEEC" />
-          <PolarAngleAxis dataKey="metric" tick={{ fontSize: 10.5, fill: COLORS.gray }} />
+          <PolarAngleAxis dataKey="metric" tick={renderTick} />
           <PolarRadiusAxis tick={{ fontSize: 9, fill: COLORS.gray }} angle={90} domain={[0, 100]} />
           <Radar name="Percentage-Based" dataKey="Percentage-Based" stroke="#C8E8E4" fill="#C8E8E4" fillOpacity={0.35} />
           <Radar name="Comprehensive Plan" dataKey="Comprehensive Plan" stroke={COLORS.teal} fill={COLORS.teal} fillOpacity={0.3} />

@@ -28,7 +28,7 @@ const SERVICES = [
       "Electronic claim submission to all major payers nationwide within 24–48 hours",
       "ICD-10-CM chiropractic diagnosis coding with full documentation support",
     ],
-    img: "https://images.pexels.com/photos/9363536/pexels-photo-9363536.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=80",
   },
   {
     tag: "Insurance",
