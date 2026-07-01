@@ -337,7 +337,7 @@ export default function HomePage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
             <div className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" className="img-anim" style={{ width: "100%", display: "block" }} />
+              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" className="img-anim" style={{ width: "100%", display: "block" }} />
             </div>
             <div style={{ position: "absolute", bottom: -16, left: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
