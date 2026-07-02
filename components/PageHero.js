@@ -4,11 +4,9 @@ import { COLORS } from "../lib/tokens";
 
 export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb, fit = "cover" }) {
   return (
-    <section style={{ position: "relative", overflow: "hidden", minHeight: fit === "contain" ? 560 : 380, display: "flex", alignItems: "center" }}>
+    <section style={{ position: "relative", overflow: "hidden", minHeight: 380, aspectRatio: fit === "contain" ? "1456 / 816" : undefined, display: "flex", alignItems: "center" }}>
       {fit === "contain" ? (
-        <div style={{ position: "absolute", inset: 0, background: COLORS.navy, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <img src={img} alt="" style={{ maxWidth: "100%", maxHeight: "100%", width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
-        </div>
+        <img src={img} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
       ) : (
         <div
           style={{
