@@ -37,19 +37,20 @@ export default function Nav() {
           maxWidth: 1180,
           margin: "0 auto",
           padding: "0 24px",
-          height: 80,
+          height: 100,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          flexWrap: "nowrap",
         }}
       >
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <img
             src="/images/logo.png"
             alt="MYRI Medical Billing Logo"
-            width={76}
-            height={60}
-            style={{ width: 76, height: 60, objectFit: "contain", flexShrink: 0 }}
+            width={101}
+            height={80}
+            style={{ width: 101, height: 80, objectFit: "contain", flexShrink: 0 }}
           />
           <div>
             <div style={{ fontWeight: 700, fontSize: 18, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
@@ -59,7 +60,7 @@ export default function Nav() {
           </div>
         </Link>
 
-        <nav style={{ display: "flex", alignItems: "center", gap: 26 }} className="desktop-nav">
+        <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }} className="desktop-nav">
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
@@ -178,7 +179,7 @@ export default function Nav() {
         )}
       </AnimatePresence>
       <style>{`
-        @media (max-width: 880px) {
+        @media (max-width: 1050px) {
           .desktop-nav { display: none !important; }
           .hamburger-btn { display: flex !important; flex-direction: column; align-items: flex-end; }
         }
