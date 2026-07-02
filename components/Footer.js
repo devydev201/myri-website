@@ -52,7 +52,7 @@ export default function Footer() {
                 alt="MYRI Medical Billing Logo"
                 width={51}
                 height={40}
-                style={{ width: 51, height: 40, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.92 }}
+                style={{ width: 51, height: 40, objectFit: "contain" }}
               />
               <div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: 18, fontFamily: "Georgia, serif" }}>
