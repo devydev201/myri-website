@@ -55,10 +55,10 @@ export default function Footer() {
                 style={{ width: 51, height: 40, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.92 }}
               />
               <div>
-                <div style={{ color: "#fff", fontWeight: 700, fontSize: 14.5, fontFamily: "Georgia, serif" }}>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 18, fontFamily: "Georgia, serif" }}>
                   {SITE.name}
                 </div>
-                <div style={{ color: "rgba(255,255,255,.45)", fontSize: 10.5 }}>{SITE.tagline}</div>
+                <div style={{ color: "rgba(255,255,255,.45)", fontSize: 11.5 }}>{SITE.tagline}</div>
               </div>
             </div>
             <div style={{ color: "rgba(255,255,255,.55)", fontSize: 11.5, lineHeight: 1.7 }}>
