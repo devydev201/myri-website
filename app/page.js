@@ -143,7 +143,7 @@ export default function HomePage() {
       <Nav />
 
       {/* HERO */}
-      <section style={{ position: "relative", overflow: "hidden", minHeight: 560, display: "flex", alignItems: "center" }}>
+      <section style={{ position: "relative", overflow: "hidden", minHeight: 380, display: "flex", alignItems: "center" }}>
         <div
           style={{
             position: "absolute",
