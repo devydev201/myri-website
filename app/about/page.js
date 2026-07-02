@@ -20,7 +20,7 @@ const STATS = [
 const VALUES = [
   { Icon: Target, title: "Chiropractic Specialization", desc: "We bill exclusively for chiropractic practices. That focus means deeper expertise, fewer errors, and better results than any generalist billing company can deliver." },
   { Icon: ShieldCheck, title: "Accuracy & HIPAA Compliance", desc: "Every claim is pre-audited before submission. 100% HIPAA-compliant operations protect your practice from audit risk while maximizing every reimbursement." },
-  { Icon: MessageCircle, title: "Transparent Communication", desc: "No black boxes. You get monthly performance reports, real-time dashboard access, and a dedicated billing specialist you can actually call — not a ticket system." },
+  { Icon: MessageCircle, title: "Transparent Communication", desc: "No black boxes. You get monthly performance reports and a dedicated billing specialist you can actually call — not a ticket system." },
   { Icon: TrendingUp, title: "Performance-Driven Results", desc: "We measure our success by your collections. Our goal every month: maximize your reimbursement rate, minimize your denial rate, and grow your practice's revenue." },
   { Icon: Users, title: "Partnership Mentality", desc: "We're not a vendor — we're an extension of your practice. When you grow, we grow. That alignment of incentives means we always work in your best interest." },
   { Icon: Zap, title: "Speed & Responsiveness", desc: "Claims submitted within 24–48 hours. Denial appeals within 72 hours. Questions answered same business day. Your cash flow can't wait — and neither can we." },
@@ -155,14 +155,13 @@ export default function AboutPage() {
             <p style={{ fontSize: 14.5, color: COLORS.gray, lineHeight: 1.82, marginBottom: 20 }}>
               Every chiropractic claim submitted by MYRI is pre-audited for accuracy, compliance, and completeness
               before it reaches the payer. We monitor every claim through adjudication, follow up on every
-              outstanding balance, and provide you with full transparency through monthly reporting and real-time
-              dashboard access.
+              outstanding balance, and provide you with full transparency through monthly reporting.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 22 }}>
               {[
                 "Fast turnaround — claims submitted within 24–48 hours",
                 "Denial appeals filed within 72 hours of every rejection",
-                "Monthly performance reports and 24/7 dashboard access",
+                "Monthly performance reports",
                 "Dedicated chiropractic billing specialist assigned to your practice",
                 "No long-term contracts — month-to-month agreements",
               ].map((item) => (
