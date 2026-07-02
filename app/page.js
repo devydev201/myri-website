@@ -375,7 +375,7 @@ export default function HomePage() {
               { Icon: Globe, t: "All 50 States Covered", d: "We bill for DC practices from Florida to California, Texas to New York — every state, every major payer." },
               { Icon: Lock, t: "Secure EHR Integration", d: "We connect directly to ChiroTouch, Jane, ECLIPSE, and Genesis via encrypted, HIPAA-compliant remote access." },
               { Icon: Smartphone, t: "No Office Visit Needed", d: "Onboard remotely in 5 business days. No paperwork to mail, no in-person meetings, no disruption to your practice." },
-              { Icon: BarChart2, t: "24/7 Dashboard Access", d: "Monitor your claims, collections, and denials in real time through your secure online client dashboard — from any device." },
+              { Icon: BarChart2, t: "Monthly Performance Reports", d: "Track your claims, collections, and denial trends through detailed monthly reports — clear visibility into your practice's financial health." },
             ].map((c, i) => (
               <motion.div key={c.t} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ background: "rgba(255,255,255,.1)" }}
