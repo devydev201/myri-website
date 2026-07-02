@@ -47,9 +47,9 @@ export default function Nav() {
           <img
             src="/images/logo.png"
             alt="MYRI Medical Billing Logo"
-            width={48}
+            width={61}
             height={48}
-            style={{ width: 48, height: 48, objectFit: "contain", flexShrink: 0 }}
+            style={{ width: 61, height: 48, objectFit: "contain", flexShrink: 0 }}
           />
           <div>
             <div style={{ fontWeight: 700, fontSize: 14.5, color: COLORS.navy, fontFamily: "Georgia, serif" }}>

@@ -50,9 +50,9 @@ export default function Footer() {
               <img
                 src="/images/logo.png"
                 alt="MYRI Medical Billing Logo"
-                width={40}
+                width={51}
                 height={40}
-                style={{ width: 40, height: 40, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.92 }}
+                style={{ width: 51, height: 40, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.92 }}
               />
               <div>
                 <div style={{ color: "#fff", fontWeight: 700, fontSize: 14.5, fontFamily: "Georgia, serif" }}>
