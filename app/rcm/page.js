@@ -24,7 +24,7 @@ const RCM_STEPS = [
   { n: 4, t: "Payment Posting & Reconciliation", d: "All insurance and patient payments accurately posted and reconciled. Underpayments identified and recovered. Every dollar accounted for." },
   { n: 5, t: "Denial Management & Appeals", d: "Every denied chiropractic claim analyzed, corrected, and formally appealed within 72 hours. We recover revenue that other billing companies write off." },
   { n: 6, t: "Patient Billing & Collections", d: "Clear, compliant patient billing statements with professional follow-up — improving patient pay rates while maintaining positive patient relationships." },
-  { n: 7, t: "Reporting & Performance Analytics", d: "Monthly financial performance reports, denial analysis, AR aging reports, and real-time dashboard access — full transparency into your practice's financial health." },
+  { n: 7, t: "Reporting & Performance Analytics", d: "Monthly financial performance reports, denial analysis, AR aging reports — full transparency into your practice's financial health." },
 ];
 
 const WHY_RCM = [
