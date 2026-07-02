@@ -37,7 +37,7 @@ export default function Nav() {
           maxWidth: 1180,
           margin: "0 auto",
           padding: "0 24px",
-          height: 68,
+          height: 80,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -47,9 +47,9 @@ export default function Nav() {
           <img
             src="/images/logo.png"
             alt="MYRI Medical Billing Logo"
-            width={61}
-            height={48}
-            style={{ width: 61, height: 48, objectFit: "contain", flexShrink: 0 }}
+            width={76}
+            height={60}
+            style={{ width: 76, height: 60, objectFit: "contain", flexShrink: 0 }}
           />
           <div>
             <div style={{ fontWeight: 700, fontSize: 18, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
