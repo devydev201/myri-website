@@ -30,6 +30,7 @@ export default function Nav() {
         borderBottom: `1px solid ${COLORS.grayLight}`,
         boxShadow: scrolled ? "0 4px 24px rgba(13,51,73,.08)" : "none",
         transition: "all .3s ease",
+        overflowX: "hidden",
       }}
     >
       <div
@@ -37,22 +38,22 @@ export default function Nav() {
           maxWidth: 1180,
           margin: "0 auto",
           padding: "0 24px",
-          height: 100,
+          height: 120,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "nowrap",
         }}
       >
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 32, flexShrink: 0 }}>
           <img
             src="/images/logo.png"
             alt="MYRI Medical Billing Logo"
-            width={101}
-            height={80}
-            style={{ width: 101, height: 80, objectFit: "contain", flexShrink: 0 }}
+            width={126}
+            height={100}
+            style={{ width: 126, height: 100, objectFit: "contain", flexShrink: 0 }}
           />
-          <div>
+          <div style={{ whiteSpace: "nowrap" }}>
             <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
               {SITE.name}
             </div>
