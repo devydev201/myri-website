@@ -89,7 +89,8 @@ export default function ContactPage() {
         accent="Free Chiropractic Billing Audit for Practices Nationwide"
         desc="Have a question or ready to improve your chiropractic practice's billing performance? Reach out today. We respond to all inquiries within 24 business hours and offer a completely free 30-day chiropractic billing audit with no obligation."
         img="/images/contact-hero.jpg"
-        pos="center 30%"
+        pos="center center"
+        fit="contain"
       />
 
       {/* CONTACT WRAP */}
