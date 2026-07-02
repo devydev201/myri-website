@@ -53,7 +53,7 @@ export default function Nav() {
             style={{ width: 101, height: 80, objectFit: "contain", flexShrink: 0 }}
           />
           <div>
-            <div style={{ fontWeight: 700, fontSize: 18, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
+            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
               {SITE.name}
             </div>
             <div style={{ fontSize: 11.5, color: COLORS.gray }}>{SITE.tagline}</div>
