@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { COLORS } from "../lib/tokens";
 
-export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb }) {
+export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb, fit = "cover" }) {
   return (
     <section style={{ position: "relative", overflow: "hidden", minHeight: 380, display: "flex", alignItems: "center" }}>
       <div
@@ -10,8 +10,10 @@ export default function PageHero({ eyebrow, title, accent, desc, img, pos = "cen
           position: "absolute",
           inset: 0,
           backgroundImage: `url('${img}')`,
-          backgroundSize: "cover",
+          backgroundSize: fit,
           backgroundPosition: pos,
+          backgroundRepeat: "no-repeat",
+          backgroundColor: fit === "contain" ? COLORS.navy : undefined,
         }}
       />
       <div
