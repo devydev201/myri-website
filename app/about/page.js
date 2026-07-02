@@ -178,7 +178,7 @@ export default function AboutPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing operations" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/about-commitment.png" alt="MYRI Medical Billing chiropractic billing operations" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }`}</style>
