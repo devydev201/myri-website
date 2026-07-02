@@ -2,22 +2,18 @@
 import { motion } from "framer-motion";
 import { COLORS } from "../lib/tokens";
 
-export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb, fit = "cover" }) {
+export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb }) {
   return (
-    <section style={{ position: "relative", overflow: "hidden", minHeight: 380, aspectRatio: fit === "contain" ? "1456 / 816" : undefined, display: "flex", alignItems: "center" }}>
-      {fit === "contain" ? (
-        <img src={img} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
-      ) : (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url('${img}')`,
-            backgroundSize: "cover",
-            backgroundPosition: pos,
-          }}
-        />
-      )}
+    <section style={{ position: "relative", overflow: "hidden", minHeight: 380, display: "flex", alignItems: "center" }}>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url('${img}')`,
+          backgroundSize: "cover",
+          backgroundPosition: pos,
+        }}
+      />
       <div
         style={{
           position: "absolute",
