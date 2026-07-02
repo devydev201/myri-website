@@ -14,7 +14,7 @@ const STATS = [
   { value: 97, suffix: "%", label: "First-Pass Claim Approval Rate" },
   { value: 9, suffix: "", label: "Core Billing Services Offered" },
   { value: 72, suffix: "hr", label: "Denial Appeal Response Time" },
-  { value: 24, suffix: "/7", label: "Client Support & Dashboard Access" },
+  { value: 24, suffix: "/7", label: "Client Support Available" },
 ];
 
 const SERVICES = [
@@ -86,7 +86,7 @@ const SERVICES = [
       "Monthly performance reports with collection rate benchmarking",
       "Denial rate tracking by payer, CPT code, and provider",
       "AR aging analysis with recovery prioritization",
-      "24/7 client dashboard access for real-time financial visibility",
+      "Custom reports tailored to your practice's key performance metrics",
     ],
     img: "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
@@ -120,8 +120,8 @@ const SERVICES = [
     desc: "Our commitment to your chiropractic practice extends around the clock. Whether you need account updates, report access, assistance with a claim, or answers to billing questions — our dedicated team is available 24/7.",
     list: [
       "Dedicated chiropractic billing specialist assigned to your practice",
-      "24/7 availability via phone, email, and client portal",
-      "Real-time claim status updates through your client dashboard",
+      "24/7 availability via phone and email",
+      "Regular claim status updates and proactive communication from your billing specialist",
       "Regular billing performance review calls with your team",
     ],
     img: "https://images.pexels.com/photos/8866726/pexels-photo-8866726.jpeg?auto=compress&cs=tinysrgb&w=800",
