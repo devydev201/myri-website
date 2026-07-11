@@ -30,7 +30,6 @@ export default function Nav() {
         borderBottom: `1px solid ${COLORS.grayLight}`,
         boxShadow: scrolled ? "0 4px 24px rgba(13,51,73,.08)" : "none",
         transition: "all .3s ease",
-        overflowX: "hidden",
       }}
     >
       <div
