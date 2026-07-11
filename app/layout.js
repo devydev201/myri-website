@@ -6,6 +6,11 @@ export const metadata = {
     "MYRI Medical Billing — dedicated remote chiropractic billing specialists headquartered in Lake Mary, FL, serving practices nationwide. 97% first-pass claim approval rate, HIPAA-compliant, 100% remote.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
