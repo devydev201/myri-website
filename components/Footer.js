@@ -42,7 +42,7 @@ export default function Footer() {
     <footer style={{ background: COLORS.navy, padding: "44px 24px 24px" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div
-          style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 28, marginBottom: 28, overflowX: "auto" }}
+          style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 28, marginBottom: 28 }}
         >
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>

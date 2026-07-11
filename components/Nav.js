@@ -2,10 +2,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { COLORS, SITE, NAV_LINKS } from "../lib/tokens";
 
 export default function Nav() {
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -42,7 +43,6 @@ export default function Nav() {
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "nowrap",
-          overflowX: "auto",
         }}
       >
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 32, flexShrink: 0 }}>
@@ -61,7 +61,7 @@ export default function Nav() {
           </div>
         </Link>
 
-        <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
+        <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }} className="desktop-nav">
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
@@ -92,8 +92,99 @@ export default function Nav() {
           </Link>
         </nav>
 
+        <button
+          onClick={() => setOpen(!open)}
+          className="hamburger-btn"
+          style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 6 }}
+          aria-label="Toggle menu"
+        >
+          <div
+            style={{
+              width: 22,
+              height: 2,
+              background: COLORS.navy,
+              marginBottom: 5,
+              borderRadius: 2,
+              transition: ".2s",
+              transform: open ? "translateY(7px) rotate(45deg)" : "none",
+            }}
+          />
+          <div
+            style={{
+              width: 22,
+              height: 2,
+              background: COLORS.navy,
+              marginBottom: 5,
+              borderRadius: 2,
+              opacity: open ? 0 : 1,
+              transition: ".2s",
+            }}
+          />
+          <div
+            style={{
+              width: 22,
+              height: 2,
+              background: COLORS.navy,
+              borderRadius: 2,
+              transition: ".2s",
+              transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
+            }}
+          />
+        </button>
       </div>
 
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            style={{ overflow: "hidden", background: "#fff", borderTop: `1px solid ${COLORS.grayLight}` }}
+          >
+            <div style={{ padding: "8px 20px 16px", display: "flex", flexDirection: "column", gap: 2 }}>
+              {NAV_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    padding: "12px 8px",
+                    fontSize: 14.5,
+                    color: pathname === l.href ? COLORS.teal : COLORS.navy,
+                    textDecoration: "none",
+                    borderBottom: "1px solid #f5f5f5",
+                    fontWeight: pathname === l.href ? 700 : 500,
+                  }}
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                style={{
+                  marginTop: 10,
+                  background: COLORS.teal,
+                  color: "#fff",
+                  padding: "12px",
+                  borderRadius: 8,
+                  textAlign: "center",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+              >
+                Free Audit →
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <style>{`
+        @media (max-width: 640px) {
+          .desktop-nav { display: none !important; }
+          .hamburger-btn { display: flex !important; flex-direction: column; align-items: flex-end; }
+        }
+      `}</style>
     </motion.header>
   );
 }
