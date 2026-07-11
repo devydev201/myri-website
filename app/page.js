@@ -272,7 +272,7 @@ export default function HomePage() {
                 </div>
                 <div style={{ marginBottom: 12 }}>
                   <label style={labelStyle}>Phone Number</label>
-                  <input name="phone" type="tel" style={inputStyle} placeholder="(321) 203-6372" />
+                  <input name="phone" type="tel" style={inputStyle} placeholder="(321) 414-1896" />
                 </div>
                 <div style={{ marginBottom: 12 }}>
                   <label style={labelStyle}>Email Address</label>
@@ -610,7 +610,7 @@ export default function HomePage() {
                   <div><label style={labelStyle}>Last Name *</label><input name="last_name" required style={inputStyle} placeholder="Smith" /></div>
                 </div>
                 <div style={{ marginBottom: 12 }}><label style={labelStyle}>Practice Name *</label><input name="practice_name" required style={inputStyle} placeholder="Your Chiropractic Office" /></div>
-                <div style={{ marginBottom: 12 }}><label style={labelStyle}>Phone Number *</label><input name="phone" type="tel" required style={inputStyle} placeholder="(321) 203-6372" /></div>
+                <div style={{ marginBottom: 12 }}><label style={labelStyle}>Phone Number *</label><input name="phone" type="tel" required style={inputStyle} placeholder="(321) 414-1896" /></div>
                 <div style={{ marginBottom: 12 }}><label style={labelStyle}>Email Address *</label><input name="email" type="email" required style={inputStyle} placeholder="doctor@yourpractice.com" /></div>
                 <div style={{ marginBottom: 18 }}>
                   <label style={labelStyle}>Current Billing Software</label>

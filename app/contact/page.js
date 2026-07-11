@@ -178,7 +178,7 @@ export default function ContactPage() {
                 </div>
                 <div style={{ marginBottom: 12 }}><label style={labelStyle}>Practice Name *</label><input name="practice_name" required style={inputStyle} placeholder="Your Chiropractic Office" /></div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }} className="form-row">
-                  <div><label style={labelStyle}>Phone Number *</label><input name="phone" type="tel" required style={inputStyle} placeholder="(321) 203-6372" /></div>
+                  <div><label style={labelStyle}>Phone Number *</label><input name="phone" type="tel" required style={inputStyle} placeholder="(321) 414-1896" /></div>
                   <div><label style={labelStyle}>Email Address *</label><input name="email" type="email" required style={inputStyle} placeholder="doctor@yourpractice.com" /></div>
                 </div>
                 <div style={{ marginBottom: 12 }}><label style={labelStyle}>City &amp; State</label><input name="city_state" style={inputStyle} placeholder="Lake Mary, FL" /></div>
