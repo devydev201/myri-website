@@ -107,6 +107,11 @@ export default function Nav() {
         )}
 
         {isMobile && (
+          <div style={{ background: "yellow", color: "black", fontSize: 24, fontWeight: 900, padding: 10, border: "5px solid black" }}>
+            BUTTON SHOULD BE HERE
+          </div>
+        )}
+        {isMobile && (
           <button
             onClick={() => setOpen(!open)}
             style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", background: "none", border: "none", cursor: "pointer", padding: 6 }}
