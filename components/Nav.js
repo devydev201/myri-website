@@ -178,12 +178,6 @@ export default function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-      <style>{`
-        @media (max-width: 640px) {
-          .desktop-nav { display: none !important; }
-          .hamburger-btn { display: flex !important; flex-direction: column; align-items: flex-end; }
-        }
-      `}</style>
     </motion.header>
   );
 }
