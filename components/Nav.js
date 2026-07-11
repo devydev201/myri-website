@@ -10,6 +10,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
   const btnRef = useRef(null);
+  const logoRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,7 +23,11 @@ export default function Nav() {
     const applyLayout = () => {
       const mobile = window.innerWidth <= 900;
       if (navRef.current) navRef.current.style.display = mobile ? "none" : "flex";
-      if (btnRef.current) btnRef.current.style.display = mobile ? "flex" : "none";
+      if (btnRef.current) btnRef.current.style.display = mobile ? "block" : "none";
+      if (logoRef.current) {
+        logoRef.current.style.width = mobile ? "84px" : "126px";
+        logoRef.current.style.height = mobile ? "67px" : "100px";
+      }
     };
     applyLayout();
     window.addEventListener("resize", applyLayout);
@@ -57,19 +62,20 @@ export default function Nav() {
           flexWrap: "nowrap",
         }}
       >
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 32, flexShrink: 0 }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 12, minWidth: 0, overflow: "hidden" }}>
           <img
+            ref={logoRef}
             src="/images/logo.png"
             alt="MYRI Medical Billing Logo"
             width={126}
             height={100}
             style={{ width: 126, height: 100, objectFit: "contain", flexShrink: 0 }}
           />
-          <div style={{ whiteSpace: "nowrap" }}>
-            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif" }}>
+          <div style={{ whiteSpace: "nowrap", minWidth: 0, overflow: "hidden" }}>
+            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif", overflow: "hidden", textOverflow: "ellipsis" }}>
               {SITE.name}
             </div>
-            <div style={{ fontSize: 11.5, color: COLORS.gray }}>{SITE.tagline}</div>
+            <div style={{ fontSize: 11.5, color: COLORS.gray, overflow: "hidden", textOverflow: "ellipsis" }}>{SITE.tagline}</div>
           </div>
         </Link>
 
@@ -107,7 +113,7 @@ export default function Nav() {
         <button
           ref={btnRef}
           onClick={() => setOpen(!open)}
-          style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 6 }}
+          style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 6, flexShrink: 0 }}
           aria-label="Toggle menu"
         >
           <div
