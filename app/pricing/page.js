@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { CheckCircle2, Mail, DollarSign, TrendingUp, Clock, Lock } from "lucide-react";
+import { CheckCircle2, Phone, Mail, DollarSign, TrendingUp, Clock, Lock } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
@@ -305,6 +305,11 @@ export default function PricingPage() {
             </div>
             <div style={{ background: "#fff", borderRadius: 14, padding: 20, border: `1.5px solid ${COLORS.grayLight}` }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.navy, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+                <Phone size={14} color={COLORS.teal} /> Call Us Directly
+              </div>
+              <a href={SITE.phoneHref} style={{ fontSize: 18, fontWeight: 700, color: COLORS.teal, textDecoration: "none" }}>{SITE.phone}</a>
+              <div style={{ fontSize: 12, color: COLORS.gray, marginTop: 4 }}>Mon–Fri 8:00 AM – 6:00 PM EST</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.navy, margin: "12px 0 4px", display: "flex", alignItems: "center", gap: 6 }}>
                 <Mail size={13} color={COLORS.teal} /> Email Us
               </div>
               <a href={SITE.emailHref} style={{ fontSize: 13.5, color: COLORS.teal, textDecoration: "none" }}>{SITE.email}</a>

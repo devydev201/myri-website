@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
         <p style={{ fontSize: 9.5, color: "rgba(255,255,255,.25)", lineHeight: 1.6, marginTop: 14, textAlign: "center" }}>
           MYRI Medical Billing LLC — Remote Chiropractic Billing Services | Lake Mary, FL 32746 | Phone: (321)
-          203-6372 | myrevenueinstant@yahoo.com | Serving chiropractic practices across all 50 states via 100% remote,
+          414-1896 | myrevenueinstant@yahoo.com | Serving chiropractic practices across all 50 states via 100% remote,
           HIPAA-compliant billing. No office visit required. Remote onboarding in 5 business days. Specializing in
           CPT 98940, 98941, 98942, Medicare chiropractic billing, personal injury billing, chiropractic denial
           management, RCM, and provider credentialing. Compatible with ChiroTouch, Jane App, ECLIPSE, and Genesis
