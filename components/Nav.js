@@ -72,6 +72,7 @@ export default function Nav() {
           isMobile: {String(isMobile)}
         </div>
 
+        <div key={isMobile ? "mobile" : "desktop"} style={{ display: "flex", alignItems: "center" }}>
         {!isMobile && (
           <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
             {NAV_LINKS.map((l) => (
@@ -145,6 +146,7 @@ export default function Nav() {
             />
           </button>
         )}
+        </div>
       </div>
 
       <AnimatePresence>
