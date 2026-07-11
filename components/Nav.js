@@ -94,7 +94,7 @@ export default function Nav() {
         <button
           onClick={() => setOpen(!open)}
           className="hamburger-btn"
-          style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 6 }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", background: "none", border: "none", cursor: "pointer", padding: 6 }}
           aria-label="Toggle menu"
         >
           <div
