@@ -23,6 +23,9 @@ header {
 }
 
 @media (max-width: 900px) {
+  header {
+    background: lime !important;
+  }
   .desktop-nav {
     display: none !important;
   }
