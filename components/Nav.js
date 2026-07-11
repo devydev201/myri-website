@@ -8,12 +8,20 @@ import { COLORS, SITE, NAV_LINKS } from "../lib/tokens";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkWidth = () => setIsMobile(window.innerWidth <= 640);
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
   return (
@@ -60,76 +68,79 @@ export default function Nav() {
           </div>
         </Link>
 
-        <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }} className="desktop-nav">
-          {NAV_LINKS.map((l) => (
+        {!isMobile && (
+          <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                style={{
+                  fontSize: 13.5,
+                  color: pathname === l.href ? COLORS.teal : COLORS.navy,
+                  textDecoration: "none",
+                  fontWeight: pathname === l.href ? 700 : 500,
+                }}
+              >
+                {l.label}
+              </Link>
+            ))}
             <Link
-              key={l.href}
-              href={l.href}
+              href="/contact"
               style={{
+                background: COLORS.teal,
+                color: "#fff",
+                padding: "9px 18px",
+                borderRadius: 9,
                 fontSize: 13.5,
-                color: pathname === l.href ? COLORS.teal : COLORS.navy,
+                fontWeight: 600,
                 textDecoration: "none",
-                fontWeight: pathname === l.href ? 700 : 500,
               }}
             >
-              {l.label}
+              Free Audit →
             </Link>
-          ))}
-          <Link
-            href="/contact"
-            style={{
-              background: COLORS.teal,
-              color: "#fff",
-              padding: "9px 18px",
-              borderRadius: 9,
-              fontSize: 13.5,
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Free Audit →
-          </Link>
-        </nav>
+          </nav>
+        )}
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="hamburger-btn"
-          style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", background: "none", border: "none", cursor: "pointer", padding: 6 }}
-          aria-label="Toggle menu"
-        >
-          <div
-            style={{
-              width: 22,
-              height: 2,
-              background: COLORS.navy,
-              marginBottom: 5,
-              borderRadius: 2,
-              transition: ".2s",
-              transform: open ? "translateY(7px) rotate(45deg)" : "none",
-            }}
-          />
-          <div
-            style={{
-              width: 22,
-              height: 2,
-              background: COLORS.navy,
-              marginBottom: 5,
-              borderRadius: 2,
-              opacity: open ? 0 : 1,
-              transition: ".2s",
-            }}
-          />
-          <div
-            style={{
-              width: 22,
-              height: 2,
-              background: COLORS.navy,
-              borderRadius: 2,
-              transition: ".2s",
-              transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
-            }}
-          />
-        </button>
+        {isMobile && (
+          <button
+            onClick={() => setOpen(!open)}
+            style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", background: "none", border: "none", cursor: "pointer", padding: 6 }}
+            aria-label="Toggle menu"
+          >
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: COLORS.navy,
+                marginBottom: 5,
+                borderRadius: 2,
+                transition: ".2s",
+                transform: open ? "translateY(7px) rotate(45deg)" : "none",
+              }}
+            />
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: COLORS.navy,
+                marginBottom: 5,
+                borderRadius: 2,
+                opacity: open ? 0 : 1,
+                transition: ".2s",
+              }}
+            />
+            <div
+              style={{
+                width: 22,
+                height: 2,
+                background: COLORS.navy,
+                borderRadius: 2,
+                transition: ".2s",
+                transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
+              }}
+            />
+          </button>
+        )}
       </div>
 
       <AnimatePresence>
@@ -178,12 +189,6 @@ export default function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-      <style>{`
-        @media (max-width: 640px) {
-          .desktop-nav { display: none !important; }
-          .hamburger-btn { display: flex !important; flex-direction: column; align-items: flex-end; }
-        }
-      `}</style>
     </motion.header>
   );
 }
