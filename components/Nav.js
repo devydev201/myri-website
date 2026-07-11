@@ -68,6 +68,10 @@ export default function Nav() {
           </div>
         </Link>
 
+        <div style={{ position: "fixed", top: 4, right: 4, background: "red", color: "white", padding: "4px 8px", fontSize: 10, zIndex: 9999 }}>
+          isMobile: {String(isMobile)}
+        </div>
+
         {!isMobile && (
           <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
             {NAV_LINKS.map((l) => (
