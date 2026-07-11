@@ -18,24 +18,6 @@ a {
   color: inherit;
 }
 
-header {
-  border: 10px solid magenta !important;
-}
-
-@media (max-width: 900px) {
-  header {
-    background: lime !important;
-  }
-  .desktop-nav {
-    display: none !important;
-  }
-  .hamburger-btn {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-}
-
 button {
   font-family: inherit;
 }

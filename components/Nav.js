@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,12 +8,25 @@ import { COLORS, SITE, NAV_LINKS } from "../lib/tokens";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef(null);
+  const btnRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const applyLayout = () => {
+      const mobile = window.innerWidth <= 900;
+      if (navRef.current) navRef.current.style.display = mobile ? "none" : "flex";
+      if (btnRef.current) btnRef.current.style.display = mobile ? "flex" : "none";
+    };
+    applyLayout();
+    window.addEventListener("resize", applyLayout);
+    return () => window.removeEventListener("resize", applyLayout);
   }, []);
 
   return (
@@ -60,7 +73,7 @@ export default function Nav() {
           </div>
         </Link>
 
-        <nav style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }} className="desktop-nav">
+        <nav ref={navRef} style={{ display: "none", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
@@ -92,8 +105,8 @@ export default function Nav() {
         </nav>
 
         <button
+          ref={btnRef}
           onClick={() => setOpen(!open)}
-          className="hamburger-btn"
           style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 6 }}
           aria-label="Toggle menu"
         >
