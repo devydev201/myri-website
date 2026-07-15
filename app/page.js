@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
@@ -21,10 +21,10 @@ const HOME_STATS = [
 function DenialChart() {
   const data = [
     { month: "Month 1", before: 18, after: 18 },
-    { month: "Month 2", before: 18, after: 15 },
-    { month: "Month 3", before: 18, after: 12 },
-    { month: "Month 4", before: 18, after: 10 },
-    { month: "Month 5", before: 18, after: 9 },
+    { month: "Month 2", before: 18, after: 16.4 },
+    { month: "Month 3", before: 18, after: 15 },
+    { month: "Month 4", before: 18, after: 14 },
+    { month: "Month 5", before: 18, after: 13.2 },
     { month: "Month 6", before: 18, after: 12.6 }, // 18 * (1 - 0.30) = 12.6, the stated 30% reduction
   ];
   return (
@@ -43,12 +43,42 @@ function DenialChart() {
   );
 }
 
+// Mobile-only: renders "Solo DC\n(~80/mo)" as two stacked lines so the labels
+// don't collide on narrow screens. Desktop keeps the default single-line tick.
+function TwoLineTick({ x, y, payload }) {
+  const lines = String(payload.value).split("\n");
+  return (
+    <g transform={`translate(${x},${y})`}>
+      {lines.map((line, i) => (
+        <text
+          key={i}
+          x={0}
+          y={0}
+          dy={12 + i * 11}
+          textAnchor="middle"
+          fill={COLORS.gray}
+          fontSize={9}
+        >
+          {line}
+        </text>
+      ))}
+    </g>
+  );
+}
+
 function PricingChart() {
   const volumes = [
     { label: "Solo DC\n(~80/mo)", inhouse: 2400, myri: 1100 },
     { label: "Small Practice\n(~250/mo)", inhouse: 5200, myri: 2600 },
     { label: "Multi-Provider\n(~600/mo)", inhouse: 11800, myri: 5400 },
   ];
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 860);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
   return (
     <div style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: "28px 24px 20px" }}>
       <div style={{ marginBottom: 18 }}>
@@ -58,7 +88,7 @@ function PricingChart() {
       <ResponsiveContainer width="100%" height={240}>
         <BarChart data={volumes} barGap={6}>
           <CartesianGrid strokeDasharray="3 3" stroke="#EEF2F2" vertical={false} />
-          <XAxis dataKey="label" tick={{ fontSize: 10, fill: COLORS.gray }} axisLine={{ stroke: COLORS.grayLight }} tickLine={false} interval={0} />
+          <XAxis dataKey="label" tick={isMobile ? <TwoLineTick /> : { fontSize: 10, fill: COLORS.gray }} axisLine={{ stroke: COLORS.grayLight }} tickLine={false} interval={0} />
           <YAxis tick={{ fontSize: 11, fill: COLORS.gray }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v / 1000}k`} width={40} />
           <Tooltip formatter={(v) => `$${v.toLocaleString()}`} contentStyle={{ borderRadius: 10, border: `1px solid ${COLORS.grayLight}`, fontSize: 12 }} />
           <Bar dataKey="inhouse" name="Typical In-House Cost" fill="#D9E4E3" radius={[6, 6, 0, 0]} />
