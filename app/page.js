@@ -5,7 +5,6 @@ import Link from "next/link";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
 import { ClipboardList, RefreshCw, Briefcase, Car, Building2, FileSignature, Search, Lock, CheckCircle2, ChevronDown, Globe, Smartphone, BarChart2, Ban, Hash, XCircle, MapPin } from "lucide-react";
 import Nav from "../components/Nav";
-import Splash from "../components/Splash";
 import Footer from "../components/Footer";
 import StatsStrip from "../components/StatsStrip";
 import AnimateOnView from "../components/AnimateOnView";
@@ -171,7 +170,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <Splash />
       <Nav />
 
       {/* HERO */}
