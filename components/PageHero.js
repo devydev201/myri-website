@@ -2,10 +2,11 @@
 import { motion } from "framer-motion";
 import { COLORS } from "../lib/tokens";
 
-export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb }) {
+export default function PageHero({ eyebrow, title, accent, desc, img, pos = "center center", breadcrumb, heroClass = "" }) {
   return (
-    <section style={{ position: "relative", overflow: "hidden", minHeight: 380, display: "flex", alignItems: "center" }}>
+    <section className={heroClass ? `${heroClass}-section` : ""} style={{ position: "relative", overflow: "hidden", minHeight: 380, display: "flex", alignItems: "center" }}>
       <div
+        className={heroClass}
         style={{
           position: "absolute",
           inset: 0,

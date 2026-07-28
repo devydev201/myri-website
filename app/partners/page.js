@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
@@ -21,14 +22,31 @@ function PartnerEarningsChart() {
     { month: "Month 5", clients: 6, earnings: 2700 },
     { month: "Month 6", clients: 8, earnings: 3600 },
   ];
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
   return (
-    <div style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: "28px 24px 20px" }}>
+    <div ref={ref} style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: "28px 24px 20px" }}>
       <div style={{ marginBottom: 18 }}>
         <div style={{ fontSize: 13.5, fontWeight: 700, color: COLORS.navy, marginBottom: 2 }}>Illustrative Partner Earnings</div>
         <div style={{ fontSize: 11.5, color: COLORS.gray }}>Example growth as your client book grows — not a guarantee</div>
       </div>
       <ResponsiveContainer width="100%" height={240}>
-        <AreaChart data={data} margin={{ top: 10, right: 10, left: -16, bottom: 0 }}>
+        <AreaChart data={inView ? data : data.map((d) => ({ ...d, earnings: 0 }))} margin={{ top: 10, right: 10, left: -16, bottom: 0 }}>
           <defs>
             <linearGradient id="earningsFill" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={COLORS.teal} stopOpacity={0.35} />
@@ -37,7 +55,7 @@ function PartnerEarningsChart() {
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#EEF2F2" vertical={false} />
           <XAxis dataKey="month" tick={{ fontSize: 10, fill: COLORS.gray }} axisLine={false} tickLine={false} />
-          <YAxis tick={{ fontSize: 11, fill: COLORS.gray }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v}`} width={46} />
+          <YAxis domain={[0, 3800]} tick={{ fontSize: 11, fill: COLORS.gray }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v}`} width={46} />
           <Tooltip
             formatter={(v) => [`$${v.toLocaleString()}`, "Example Monthly Earnings"]}
             labelFormatter={(l, payload) => `${l} — ${payload?.[0]?.payload?.clients ?? ""} client(s)`}
@@ -51,8 +69,8 @@ function PartnerEarningsChart() {
             fill="url(#earningsFill)"
             dot={{ r: 3.5, fill: COLORS.teal }}
             isAnimationActive={true}
-            animationBegin={200}
-            animationDuration={1500}
+            animationBegin={0}
+            animationDuration={1600}
             animationEasing="ease-out"
           />
         </AreaChart>
@@ -114,7 +132,17 @@ export default function PartnersPage() {
         desc="You bring the billing expertise. We bring the systems, compliance, and support. MYRI works with independent partners — not employees — so you keep your flexibility while plugging into infrastructure that's already built."
         img="/images/partners-hero.jpg"
         pos="center 30%"
+        heroClass="partners-hero"
       />
+      <style>{`
+        @media (max-width: 700px) {
+          .partners-hero-section { min-height: 460px !important; }
+          .partners-hero {
+            background-size: cover !important;
+            background-position: 60% center !important;
+          }
+        }
+      `}</style>
 
       {/* INTRO */}
       <section style={{ padding: "64px 24px" }}>
@@ -194,9 +222,9 @@ export default function PartnersPage() {
                 idea; your actual commission structure is discussed and agreed individually on a call.
               </p>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
+            <div>
               <PartnerEarningsChart />
-            </motion.div>
+            </div>
           </div>
           <style>{`@media (max-width: 860px) { .earnings-split { grid-template-columns: 1fr !important; gap: 28px !important; } }`}</style>
         </div>

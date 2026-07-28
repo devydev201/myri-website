@@ -64,29 +64,31 @@ function PlanComparisonChart() {
     { metric: "Denial Mgmt", "Percentage-Based": 90, "Comprehensive Plan": 100, "Per-Claim": 80 },
     { metric: "Credentialing", "Percentage-Based": 40, "Comprehensive Plan": 100, "Per-Claim": 30 },
     { metric: "Cost Predictability", "Percentage-Based": 50, "Comprehensive Plan": 70, "Per-Claim": 95 },
-    { metric: "Low Volume", "Percentage-Based": 55, "Comprehensive Plan": 50, "Per-Claim": 95 },
+    { metric: "Low Volume Fit", "Percentage-Based": 55, "Comprehensive Plan": 50, "Per-Claim": 95 },
   ];
-  const renderTick = ({ payload, x, y, textAnchor }) => {
+  const renderTick = ({ payload, x, y, textAnchor, cx }) => {
     const words = String(payload.value).split(" ");
+    // Nudge left/right labels slightly outward so they clear the chart body
+    const anchor = x < cx - 4 ? "end" : x > cx + 4 ? "start" : "middle";
     return (
-      <text x={x} y={y} textAnchor={textAnchor} fill={COLORS.gray} fontSize={10}>
+      <text x={x} y={y} textAnchor={anchor} fill={COLORS.gray} fontSize={10.5} fontWeight={600}>
         {words.map((w, i) => (
-          <tspan key={i} x={x} dy={i === 0 ? 0 : 11}>{w}</tspan>
+          <tspan key={i} x={x} dy={i === 0 ? 0 : 12}>{w}</tspan>
         ))}
       </text>
     );
   };
   return (
-    <div style={{ width: "100%", height: 340 }}>
+    <div style={{ width: "100%", height: 380 }}>
       <ResponsiveContainer>
-        <RadarChart data={data} outerRadius="62%" margin={{ top: 20, right: 60, bottom: 20, left: 60 }}>
+        <RadarChart data={data} outerRadius="55%" margin={{ top: 40, right: 80, bottom: 30, left: 80 }}>
           <PolarGrid stroke="#E5EEEC" />
           <PolarAngleAxis dataKey="metric" tick={renderTick} />
-          <PolarRadiusAxis tick={{ fontSize: 9, fill: COLORS.gray }} angle={90} domain={[0, 100]} />
-          <Radar name="Percentage-Based" dataKey="Percentage-Based" stroke="#C8E8E4" fill="#C8E8E4" fillOpacity={0.35} />
+          <PolarRadiusAxis tick={false} axisLine={false} angle={90} domain={[0, 100]} />
+          <Radar name="Percentage-Based" dataKey="Percentage-Based" stroke="#9ED8D0" fill="#C8E8E4" fillOpacity={0.35} />
           <Radar name="Comprehensive Plan" dataKey="Comprehensive Plan" stroke={COLORS.teal} fill={COLORS.teal} fillOpacity={0.3} />
           <Radar name="Per-Claim" dataKey="Per-Claim" stroke={COLORS.navy} fill={COLORS.navy} fillOpacity={0.2} />
-          <Legend wrapperStyle={{ fontSize: 11 }} />
+          <Legend wrapperStyle={{ fontSize: 11, paddingTop: 8 }} />
           <Tooltip contentStyle={{ borderRadius: 10, border: `1px solid ${COLORS.grayLight}`, fontSize: 12 }} />
         </RadarChart>
       </ResponsiveContainer>
