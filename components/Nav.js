@@ -21,7 +21,7 @@ export default function Nav() {
 
   useEffect(() => {
     const applyLayout = () => {
-      const mobile = window.innerWidth <= 1280;
+      const mobile = window.innerWidth <= 1060;
       if (navRef.current) navRef.current.style.display = mobile ? "none" : "flex";
       if (btnRef.current) btnRef.current.style.display = mobile ? "block" : "none";
       if (logoRef.current) {
@@ -52,9 +52,9 @@ export default function Nav() {
     >
       <div
         style={{
-          maxWidth: 1180,
+          maxWidth: 1240,
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 18px",
           height: 120,
           display: "flex",
           alignItems: "center",
@@ -62,7 +62,7 @@ export default function Nav() {
           flexWrap: "nowrap",
         }}
       >
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 12, flexShrink: 0 }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, textDecoration: "none", marginRight: 10, flexShrink: 0 }}>
           <img
             ref={logoRef}
             src="/images/logo.png"
@@ -72,20 +72,20 @@ export default function Nav() {
             style={{ width: 126, height: 100, objectFit: "contain", flexShrink: 0 }}
           />
           <div style={{ flexShrink: 0 }}>
-            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif", whiteSpace: "nowrap" }}>
+            <div style={{ fontWeight: 700, fontSize: 15.5, color: COLORS.navy, fontFamily: "Georgia, serif", whiteSpace: "nowrap" }}>
               {SITE.name}
             </div>
-            <div style={{ fontSize: 11.5, color: COLORS.gray, whiteSpace: "nowrap" }}>{SITE.tagline}</div>
+            <div style={{ fontSize: 11, color: COLORS.gray, whiteSpace: "nowrap" }}>{SITE.tagline}</div>
           </div>
         </Link>
 
-        <nav ref={navRef} style={{ display: "none", alignItems: "center", gap: 22, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
+        <nav ref={navRef} style={{ display: "none", alignItems: "center", gap: 14, flexWrap: "nowrap", whiteSpace: "nowrap" }}>
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               style={{
-                fontSize: 13.5,
+                fontSize: 12.5,
                 color: pathname === l.href ? COLORS.teal : COLORS.navy,
                 textDecoration: "none",
                 fontWeight: pathname === l.href ? 700 : 500,
@@ -99,9 +99,9 @@ export default function Nav() {
             style={{
               background: COLORS.teal,
               color: "#fff",
-              padding: "9px 18px",
+              padding: "8px 14px",
               borderRadius: 9,
-              fontSize: 13.5,
+              fontSize: 12.5,
               fontWeight: 600,
               textDecoration: "none",
             }}
