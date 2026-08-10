@@ -52,5 +52,11 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 }
