@@ -21,7 +21,7 @@ export default function Nav() {
 
   useEffect(() => {
     const applyLayout = () => {
-      const mobile = window.innerWidth <= 900;
+      const mobile = window.innerWidth <= 1280;
       if (navRef.current) navRef.current.style.display = mobile ? "none" : "flex";
       if (btnRef.current) btnRef.current.style.display = mobile ? "block" : "none";
       if (logoRef.current) {
@@ -62,7 +62,7 @@ export default function Nav() {
           flexWrap: "nowrap",
         }}
       >
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 12, minWidth: 0, overflow: "hidden" }}>
+        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginRight: 12, flexShrink: 0 }}>
           <img
             ref={logoRef}
             src="/images/logo.png"
@@ -71,11 +71,11 @@ export default function Nav() {
             height={100}
             style={{ width: 126, height: 100, objectFit: "contain", flexShrink: 0 }}
           />
-          <div style={{ whiteSpace: "nowrap", minWidth: 0, overflow: "hidden" }}>
-            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif", overflow: "hidden", textOverflow: "ellipsis" }}>
+          <div style={{ flexShrink: 0 }}>
+            <div style={{ fontWeight: 700, fontSize: 16, color: COLORS.navy, fontFamily: "Georgia, serif", whiteSpace: "nowrap" }}>
               {SITE.name}
             </div>
-            <div style={{ fontSize: 11.5, color: COLORS.gray, overflow: "hidden", textOverflow: "ellipsis" }}>{SITE.tagline}</div>
+            <div style={{ fontSize: 11.5, color: COLORS.gray, whiteSpace: "nowrap" }}>{SITE.tagline}</div>
           </div>
         </Link>
 
