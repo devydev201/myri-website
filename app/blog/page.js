@@ -26,7 +26,7 @@ export default function BlogIndex() {
         title="Chiropractic Billing,"
         accent="Explained"
         desc="Practical, straight-talking guidance on chiropractic billing, coding, denials, and revenue — from a team that does this every day."
-        img="/images/about-hero.jpg"
+        img="/images/blog-hero.jpg"
       />
 
       <section style={{ padding: "64px 24px", maxWidth: 1100, margin: "0 auto" }}>
