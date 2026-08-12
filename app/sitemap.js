@@ -1,7 +1,16 @@
+import { BLOG_POSTS } from '../lib/blogPosts'
+
 const baseUrl = 'https://myrimedicalbilling.com'
 
 export default function sitemap() {
   const lastModified = new Date()
+
+  const blogPostUrls = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date + 'T00:00:00'),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
 
   return [
     {
@@ -52,6 +61,13 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    ...blogPostUrls,
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified,
