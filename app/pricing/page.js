@@ -13,7 +13,7 @@ import AnimateOnView from "../../components/AnimateOnView";
 const PLANS = [
   {
     name: "Percentage-Based",
-    amount: "4–7%",
+    amount: "3.5–5%",
     period: "of collected revenue",
     features: [
       "Performance-aligned pricing model",
@@ -187,7 +187,7 @@ export default function PricingPage() {
                   <tr><th style={thStyle}>Pricing Model</th><th style={thStyle}>Description</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td style={tdStyle}><strong>Percentage-Based</strong></td><td style={tdStyle}>A percentage of your monthly collected chiropractic revenue — typically 4–7% depending on volume and services.</td></tr>
+                  <tr><td style={tdStyle}><strong>Percentage-Based</strong></td><td style={tdStyle}>A percentage of your monthly collected chiropractic revenue — typically 3.5–5% depending on volume and services.</td></tr>
                   <tr style={{ background: "#F8FAFA" }}><td style={tdStyle}><strong>Per-Claim Pricing</strong></td><td style={tdStyle}>A flat fee for each chiropractic claim processed — ideal for practices with predictable, stable volume.</td></tr>
                   <tr><td style={tdStyle}><strong>Comprehensive Plan</strong></td><td style={tdStyle}>Bundled services for a fixed monthly fee — includes all billing, credentialing, and support services.</td></tr>
                 </tbody>
