@@ -23,6 +23,7 @@ const COLS = [
       { label: "Pricing", href: "/pricing" },
       { label: "Contact Us", href: "/contact" },
       { label: "Free Billing Audit", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

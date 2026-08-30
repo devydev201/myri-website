@@ -27,6 +27,17 @@ function Block({ block }) {
       <p style={{ fontSize: 17, color: "#2a3b41", lineHeight: 1.8, margin: "0 0 20px" }}>{block.text}</p>
     );
   }
+  if (block.type === "plink") {
+    return (
+      <p style={{ fontSize: 17, color: "#2a3b41", lineHeight: 1.8, margin: "0 0 20px" }}>
+        {block.text}{" "}
+        <Link href={block.href} style={{ color: COLORS.teal, fontWeight: 600, textDecoration: "underline" }}>
+          {block.linkText}
+        </Link>
+        {block.after || ""}
+      </p>
+    );
+  }
   if (block.type === "ul") {
     return (
       <ul style={{ margin: "0 0 22px", paddingLeft: 22 }}>

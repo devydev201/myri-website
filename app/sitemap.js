@@ -67,6 +67,12 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     ...blogPostUrls,
     {
       url: `${baseUrl}/privacy-policy`,
