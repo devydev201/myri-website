@@ -55,22 +55,8 @@ function FaqItem({ item, open, onToggle }) {
 export default function FaqPage() {
   const [openIdx, setOpenIdx] = useState(0);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQS.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a.join(" ") },
-    })),
-  };
-
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Nav />
       <PageHero
         breadcrumb={<>Home › FAQ</>}

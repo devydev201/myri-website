@@ -1,3 +1,5 @@
+import { FAQS } from "../../lib/faqs";
+
 export const metadata = {
   title: "Chiropractic Billing FAQ | CPT Codes, Denials, Medicare & PIP | MYRI",
   description:
@@ -16,5 +18,23 @@ export const metadata = {
 };
 
 export default function FaqLayout({ children }) {
-  return children;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a.join(" ") },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      {children}
+    </>
+  );
 }
