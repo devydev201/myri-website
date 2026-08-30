@@ -11,6 +11,46 @@ export const viewport = {
   initialScale: 1,
 };
 
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "MYRI Medical Billing",
+  alternateName: "MYRI Medical Billing LLC",
+  url: "https://myrimedicalbilling.com",
+  logo: "https://myrimedicalbilling.com/images/logo.png",
+  image: "https://myrimedicalbilling.com/images/logo.png",
+  description:
+    "Remote chiropractic medical billing specialists serving practices in all 50 states — claim submission, denial management, personal injury and PIP billing, Medicare compliance, and revenue cycle management. 100% remote, no office visit required.",
+  telephone: "+1-321-414-1896",
+  email: "info@myrimedicalbilling.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "",
+    addressLocality: "Lake Mary",
+    addressRegion: "FL",
+    postalCode: "32746",
+    addressCountry: "US",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Myriangeliz Fraguada",
+  },
+  priceRange: "$$",
+  medicalSpecialty: "Chiropractic",
+  knowsAbout: [
+    "Chiropractic medical billing",
+    "CPT codes 98940-98942",
+    "Medicare AT modifier",
+    "Personal injury and PIP billing",
+    "Chiropractic denial management",
+    "Revenue cycle management",
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -21,7 +61,13 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
