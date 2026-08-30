@@ -173,6 +173,24 @@ export default function ServicesPage() {
       />
       <StatsStrip stats={STATS} />
 
+      {/* ANSWER-FIRST INTRO */}
+      <section style={{ padding: "56px 24px 0" }}>
+        <div style={{ maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 10 }}>What Chiropractic Billing Services Cover</div>
+          <h2 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(22px,2.6vw,28px)", color: COLORS.navy, margin: "0 0 16px" }}>
+            What does a chiropractic billing service do?
+          </h2>
+          <p style={{ fontSize: 15, color: COLORS.gray, lineHeight: 1.8 }}>
+            A chiropractic billing service handles the full financial side of a practice: verifying insurance
+            eligibility, coding chiropractic services with the correct CPT and ICD-10 codes, submitting and tracking
+            claims, appealing denials, posting payments, and managing patient balances. A chiropractic-specialized
+            service also handles the parts generalists get wrong — the Medicare AT modifier and spinal-manipulation
+            rules, personal injury and PIP billing, and CPT codes 98940&ndash;98942. MYRI provides all of these
+            100% remotely to practices in all 50 states.
+          </p>
+        </div>
+      </section>
+
       {/* REMOTE HIGHLIGHT */}
       <section style={{ padding: "56px 24px 0" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
