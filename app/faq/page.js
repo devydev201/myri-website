@@ -79,7 +79,6 @@ export default function FaqPage() {
         accent="Questions Answered"
         desc="Straight answers to the questions chiropractic practices ask most — CPT codes, the Medicare AT modifier, denials, PIP and MedPay, credentialing, and what outsourced billing actually costs."
         img="/images/faq-hero.jpg"
-        imgRatio="1376 / 768"
       />
 
       <section style={{ padding: "56px 24px", maxWidth: 820, margin: "0 auto" }}>
