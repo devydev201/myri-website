@@ -27,5 +27,40 @@ export function generateMetadata({ params }) {
 export default function BlogPostPage({ params }) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
-  return <PostView post={post} />;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: "MYRI Medical Billing",
+      url: "https://myrimedicalbilling.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "MYRI Medical Billing",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://myrimedicalbilling.com/images/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://myrimedicalbilling.com/blog/${post.slug}`,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <PostView post={post} />
+    </>
+  );
 }

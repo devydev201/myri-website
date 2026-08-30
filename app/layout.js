@@ -23,6 +23,14 @@ const businessSchema = {
     "Remote chiropractic medical billing specialists serving practices in all 50 states — claim submission, denial management, personal injury and PIP billing, Medicare compliance, and revenue cycle management. 100% remote, no office visit required.",
   telephone: "+1-321-414-1896",
   email: "info@myrimedicalbilling.com",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-321-414-1896",
+    email: "info@myrimedicalbilling.com",
+    contactType: "customer service",
+    areaServed: "US",
+    availableLanguage: ["English", "Spanish"],
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "",
