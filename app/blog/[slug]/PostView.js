@@ -100,6 +100,21 @@ export default function PostView({ post }) {
           <Block key={i} block={block} />
         ))}
 
+        {/* FAQs */}
+        {post.faqs && post.faqs.length > 0 && (
+          <section style={{ marginTop: 40 }}>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 26, color: COLORS.navy, margin: "0 0 18px", lineHeight: 1.3 }}>
+              Frequently asked questions
+            </h2>
+            {post.faqs.map((f, i) => (
+              <div key={i} style={{ borderTop: `1px solid ${COLORS.grayLight}`, padding: "18px 0" }}>
+                <h3 style={{ fontSize: 18, color: COLORS.navy, margin: "0 0 8px", lineHeight: 1.4 }}>{f.q}</h3>
+                <p style={{ fontSize: 16.5, color: "#2a3b41", lineHeight: 1.75, margin: 0 }}>{f.a}</p>
+              </div>
+            ))}
+          </section>
+        )}
+
         {/* CTA */}
         <div
           style={{
