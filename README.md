@@ -53,6 +53,20 @@ can either:
 - Replace the existing site's repo connection with this new one, or
 - Deploy this as a new Netlify site and repoint your domain once you're happy with it.
 
+## Staging and releases
+
+Changes are batched so the live site updates once per release, not once per edit.
+
+- **`staging`**: every change goes here first, through a pull request into `staging`.
+  Nothing on `staging` is live.
+- **`main`**: what's live on myrimedicalbilling.com. It only changes through a release.
+- **Release**: open one pull request from `staging` into `main` titled
+  "Release YYYY-MM-DD", listing everything in it. Merge it, deploy `main` to Netlify,
+  then confirm the new deploy is live.
+- To see what's waiting to go live, compare `main...staging` on GitHub.
+- Never commit straight to `main`. If a hotfix has to go out alone, merge it into
+  `staging` too so the branches don't drift apart.
+
 ## Forms
 
 The contact/quote forms currently submit via local React state for the in-browser
