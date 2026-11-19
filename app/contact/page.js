@@ -167,7 +167,7 @@ export default function ContactPage() {
               >
                 <input type="hidden" name="form-name" value="contact-form-1" />
                 <input type="hidden" name="bot-field" style={{ display: "none" }} />
-                <h3 style={{ fontFamily: "Georgia, serif", fontSize: 19, color: COLORS.navy, marginBottom: 6 }}>Request a Free Chiropractic Billing Audit</h3>
+                <h2 style={{ fontFamily: "Georgia, serif", fontSize: 19, color: COLORS.navy, marginTop: 0, marginBottom: 6 }}>Request a Free Chiropractic Billing Audit</h2>
                 <p style={{ fontSize: 12.5, color: COLORS.gray, marginBottom: 20 }}>
                   Fill out the form below and a chiropractic billing specialist will contact you within 24 hours. All
                   forms are submitted securely to {SITE.email}.

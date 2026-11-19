@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Chiropractic Revenue Cycle Management (RCM) | MYRI Medical Billing",
+  title: "Chiropractic Revenue Cycle Management (RCM) | MYRI",
   description:
-    "End-to-end chiropractic revenue cycle management: eligibility verification, coding, claim submission, denial appeals, payment posting, and AR follow-up. Remote RCM for practices in all 50 states.",
+    "End-to-end chiropractic RCM: eligibility checks, coding, claim submission, denial appeals, payment posting, and A/R follow-up. Remote, all 50 states.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/rcm",
   },

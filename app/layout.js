@@ -46,6 +46,8 @@ const businessSchema = {
   founder: {
     "@type": "Person",
     name: "Myriangeliz Fraguada",
+    jobTitle: "Founder",
+    url: "https://myrimedicalbilling.com/about",
   },
   priceRange: "$$",
   medicalSpecialty: "Chiropractic",
@@ -56,6 +58,9 @@ const businessSchema = {
     "Personal injury and PIP billing",
     "Chiropractic denial management",
     "Revenue cycle management",
+    "Medicare ABN and GA, GZ, GY modifiers",
+    "Chiropractic credentialing",
+    "ChiroTouch, Jane App, ECLIPSE, and Genesis billing",
   ],
 };
 

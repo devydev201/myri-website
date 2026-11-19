@@ -69,7 +69,16 @@ function Block({ block }) {
   return null;
 }
 
-export default function PostView({ post }) {
+function initials(name) {
+  return name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+export default function PostView({ post, author, related = [] }) {
   return (
     <div>
       <Nav />
@@ -81,11 +90,22 @@ export default function PostView({ post }) {
             <ArrowLeft size={16} /> All Articles
           </Link>
           <div style={{ fontSize: 13, color: COLORS.mint, fontWeight: 700, marginBottom: 14, letterSpacing: ".04em" }}>
-            {formatDate(post.date)} · {post.readTime}
+            Published <time dateTime={post.date}>{formatDate(post.date)}</time> · {post.readTime}
           </div>
           <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(28px, 4vw, 40px)", color: "#fff", lineHeight: 1.25, margin: 0 }}>
             {post.title}
           </h1>
+          {author && (
+            <div style={{ marginTop: 18, fontSize: 14.5, color: "#dbe7ea", lineHeight: 1.6 }}>
+              By <Link href={author.url.replace("https://myrimedicalbilling.com", "")} style={{ color: "#fff", fontWeight: 700, textDecoration: "none" }}>{author.name}</Link>, {author.role}
+              {post.updated && (
+                <>
+                  <br />
+                  Last updated <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                </>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
@@ -113,6 +133,68 @@ export default function PostView({ post }) {
               </div>
             ))}
           </section>
+        )}
+
+        {/* About the author */}
+        {author && (
+          <aside
+            aria-label="About the author"
+            style={{
+              marginTop: 40,
+              display: "flex",
+              gap: 18,
+              alignItems: "flex-start",
+              borderTop: `1px solid ${COLORS.grayLight}`,
+              paddingTop: 28,
+            }}
+          >
+            <div
+              aria-hidden="true"
+              style={{
+                flexShrink: 0,
+                width: 56,
+                height: 56,
+                borderRadius: 28,
+                background: COLORS.navy,
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: 18,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {initials(author.name)}
+            </div>
+            <div>
+              <div style={{ fontSize: 13, color: COLORS.gray, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 4 }}>
+                About the author
+              </div>
+              <div style={{ fontSize: 17, color: COLORS.navy, fontWeight: 700, marginBottom: 6 }}>
+                {author.name}, {author.role}
+              </div>
+              <p style={{ fontSize: 15.5, color: "#2a3b41", lineHeight: 1.7, margin: 0 }}>{author.bio}</p>
+            </div>
+          </aside>
+        )}
+
+        {/* Keep reading */}
+        {related.length > 0 && (
+          <nav aria-label="Related guides" style={{ marginTop: 40 }}>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 24, color: COLORS.navy, margin: "0 0 16px", lineHeight: 1.3 }}>
+              Keep reading
+            </h2>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              {related.map((r) => (
+                <li key={r.slug} style={{ borderTop: `1px solid ${COLORS.grayLight}`, padding: "14px 0" }}>
+                  <Link href={`/blog/${r.slug}`} style={{ fontSize: 17, fontWeight: 700, color: COLORS.teal, textDecoration: "none" }}>
+                    {r.title}
+                  </Link>
+                  <p style={{ fontSize: 15, color: COLORS.gray, lineHeight: 1.6, margin: "4px 0 0" }}>{r.excerpt}</p>
+                </li>
+              ))}
+            </ul>
+          </nav>
         )}
 
         {/* CTA */}
