@@ -1,0 +1,32 @@
+# MYRI Medical Billing
+
+> MYRI Medical Billing is a billing company that works only with chiropractic practices. Based in Lake Mary, Florida, it serves chiropractors remotely and works inside the practice's existing EHR (ChiroTouch, Jane App, ECLIPSE, Genesis, ChiroFusion, DrChrono, Tebra/Kareo, and others).
+
+Key facts:
+- Specialty: chiropractic billing only.
+- Services: claim submission, chiropractic CPT coding (98940-98942), Medicare chiropractic compliance (AT/GA/GZ/GY modifiers, ABNs), denial management and appeals, A/R follow-up, credentialing, personal injury and PIP billing, and patient billing statements.
+- How it works: a HIPAA Business Associate Agreement is signed first; the practice adds a separate MYRI user with billing permissions. Practices keep their own software.
+- Pricing models: percentage of collected revenue (typically 3.5-5%), a custom bundled monthly plan, or a flat fee per claim.
+- Free offer: a free 30-day billing review. Practices can send four standard reports instead of sharing a login.
+- Contact: (321) 414-1896, info@myrimedicalbilling.com
+
+## Main pages
+
+- [Services](https://myrimedicalbilling.com/services): what MYRI handles for chiropractic practices
+- [Pricing](https://myrimedicalbilling.com/pricing): the three pricing models
+- [About](https://myrimedicalbilling.com/about): who MYRI is
+- [FAQ](https://myrimedicalbilling.com/faq): common questions about outsourcing chiropractic billing
+- [Contact](https://myrimedicalbilling.com/contact): request the free billing review
+
+## Guides
+
+- [Keep Your EHR: How Outsourced Chiropractic Billing Works Inside Your Current Software](https://myrimedicalbilling.com/blog/chiropractic-billing-with-your-existing-ehr)
+- [Medicare Chiropractic Compliance: ABNs, Maintenance Care & the GA, GZ, GY Modifiers](https://myrimedicalbilling.com/blog/medicare-chiropractic-compliance-abn-maintenance-care)
+- [Patient Billing Statements Your Patients Actually Understand](https://myrimedicalbilling.com/blog/patient-billing-statements-patients-understand)
+- [New Provider? How to Get Paneled and Paid Sooner](https://myrimedicalbilling.com/blog/chiropractic-credentialing-new-providers)
+- [What Actually Happens During a Chiropractic Billing Audit](https://myrimedicalbilling.com/blog/what-happens-during-a-chiropractic-billing-audit)
+- [Chiropractic CPT Codes Explained: 98940, 98941 & 98942](https://myrimedicalbilling.com/blog/chiropractic-cpt-codes-explained)
+- [Inside Our 72-Hour Denial Appeal Process](https://myrimedicalbilling.com/blog/72-hour-denial-appeals)
+- [Why Chiropractic Claims Get Denied](https://myrimedicalbilling.com/blog/why-chiropractic-claims-get-denied)
+- [The True Cost of a Billing Mistake in a Chiropractic Practice](https://myrimedicalbilling.com/blog/true-cost-of-a-billing-mistake)
+- [Should You Outsource Your Chiropractic Billing?](https://myrimedicalbilling.com/blog/should-you-outsource-chiropractic-billing)
