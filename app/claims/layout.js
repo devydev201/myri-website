@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Chiropractic Claim Follow-Up & Denial Appeals | MYRI Medical Billing",
+  title: "Chiropractic Claim Follow-Up & Denial Appeals | MYRI",
   description:
-    "Chiropractic claim follow-up and denial management: every claim tracked to final payment, denials investigated and appealed within 72 hours. Reduce denials and recover revenue. Remote, all 50 states.",
+    "Every chiropractic claim tracked to payment, and every denial investigated and appealed within 72 hours. Remote claim follow-up in all 50 states.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/claims",
   },

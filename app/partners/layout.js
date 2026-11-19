@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Partner With MYRI | Chiropractic Billing Contractors & Referral Partners",
+  title: "Partner With MYRI | Chiropractic Billing Referral Partners",
   description:
-    "Partner with MYRI Medical Billing as an independent (1099) chiropractic billing contractor or referral partner. Remote, all 50 states — bring or refer practices and grow with a chiropractic-only billing specialist.",
+    "Join MYRI Medical Billing as an independent (1099) chiropractic billing contractor or referral partner, working remotely with a chiropractic-only team.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/partners",
   },

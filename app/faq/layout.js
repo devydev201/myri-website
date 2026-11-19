@@ -1,9 +1,9 @@
 import { FAQS } from "../../lib/faqs";
 
 export const metadata = {
-  title: "Chiropractic Billing FAQ | CPT Codes, Denials, Medicare & PIP | MYRI",
+  title: "Chiropractic Billing FAQ: CPT, Medicare & PIP | MYRI",
   description:
-    "Answers to the chiropractic billing questions DC practices ask most: CPT codes 98940–98942, the Medicare AT modifier, why claims get denied, PIP and MedPay billing, credentialing timelines, and what outsourced billing costs. MYRI Medical Billing — 100% remote, all 50 states.",
+    "Answers to common chiropractic billing questions: CPT codes 98940–98942, the Medicare AT modifier, denials, PIP billing, credentialing, and costs.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/faq",
   },

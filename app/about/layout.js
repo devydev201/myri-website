@@ -1,7 +1,7 @@
 export const metadata = {
   title: "About MYRI | Chiropractic-Only Medical Billing Specialists",
   description:
-    "MYRI Medical Billing is a chiropractic-only billing company serving practices in all 50 states, 100% remotely. Founded to fix what generic billers get wrong about DC billing — CPT coding, PIP, and Medicare compliance.",
+    "MYRI Medical Billing is a chiropractic-only billing company serving practices remotely in all 50 states, built around CPT coding, PIP, and Medicare rules.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/about",
   },

@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Chiropractic Billing Services | Coding, Denials, PIP & Medicare | MYRI",
+  title: "Chiropractic Billing Services: Coding, PIP & Medicare | MYRI",
   description:
-    "Full-service chiropractic billing: CPT coding (98940–98942), insurance verification, denial management, PIP and personal injury billing, Medicare compliance, and credentialing. 100% remote, all 50 states.",
+    "Full-service chiropractic billing: CPT coding, insurance verification, denial management, PIP and personal injury, Medicare compliance, credentialing.",
   alternates: {
     canonical: "https://myrimedicalbilling.com/services",
   },

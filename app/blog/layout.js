@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Chiropractic Billing Insights & Guides | MYRI Medical Billing Blog",
+  title: "Chiropractic Billing Guides & Insights | MYRI Blog",
   description:
     "Practical guidance on chiropractic billing, coding, denials, PIP, and Medicare — from a remote chiropractic billing specialist serving all 50 states.",
   alternates: {

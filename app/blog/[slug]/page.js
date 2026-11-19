@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, getPostBySlug } from "../../../lib/blogPosts";
+import { BLOG_POSTS, getPostBySlug, getRelatedPosts, AUTHOR } from "../../../lib/blogPosts";
 import PostView from "./PostView";
 
 export function generateStaticParams() {
@@ -20,7 +20,11 @@ export function generateMetadata({ params }) {
       url,
       siteName: "MYRI Medical Billing",
       type: "article",
+      publishedTime: post.date,
+      modifiedTime: post.updated || post.date,
+      authors: [AUTHOR.name],
     },
+    authors: [{ name: AUTHOR.name, url: AUTHOR.url }],
   };
 }
 
@@ -34,11 +38,17 @@ export default function BlogPostPage({ params }) {
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     author: {
-      "@type": "Organization",
-      name: "MYRI Medical Billing",
-      url: "https://myrimedicalbilling.com",
+      "@type": "Person",
+      name: AUTHOR.name,
+      jobTitle: "Founder",
+      url: AUTHOR.url,
+      worksFor: {
+        "@type": "Organization",
+        name: "MYRI Medical Billing",
+        url: "https://myrimedicalbilling.com",
+      },
     },
     publisher: {
       "@type": "Organization",
@@ -79,7 +89,7 @@ export default function BlogPostPage({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      <PostView post={post} />
+      <PostView post={post} author={AUTHOR} related={getRelatedPosts(post.slug)} />
     </>
   );
 }
