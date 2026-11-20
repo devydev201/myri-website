@@ -6,6 +6,7 @@ export const metadata = {
     canonical: "https://myrimedicalbilling.com/partners",
   },
   openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
     title: "Partner With MYRI Medical Billing",
     description:
       "Independent billing contractors and referral partners: grow your book with a remote, chiropractic-only billing specialist serving all 50 states.",

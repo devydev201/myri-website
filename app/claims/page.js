@@ -136,7 +136,7 @@ export default function ClaimsPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic claim submission process Florida MYRI Medical Billing" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-5327921-w800.jpg" alt="Chiropractic claim submission process Florida MYRI Medical Billing" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
@@ -147,7 +147,7 @@ export default function ClaimsPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 44, alignItems: "center" }} className="two-col-rev">
           <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap order-2-mobile" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/7108757/pexels-photo-7108757.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Proactive chiropractic claim follow-up denial management Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-7108757-w800.jpg" alt="Proactive chiropractic claim follow-up denial management Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, color: COLORS.teal, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 10 }}>Proactive Chiropractic Claim Follow-Up & Denial Management</div>
@@ -218,7 +218,7 @@ export default function ClaimsPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/669623/pexels-photo-669623.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Benefits of chiropractic claim billing with MYRI Medical Billing Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-669623-w800.jpg" alt="Benefits of chiropractic claim billing with MYRI Medical Billing Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col-3 { grid-template-columns: 1fr !important; } }`}</style>

@@ -368,7 +368,7 @@ export default function HomePage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} style={{ position: "relative" }}>
             <div className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-              <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" className="img-anim" style={{ width: "100%", display: "block" }} />
+              <img src="/images/stock/pexels-3184291-w800.jpg" alt="MYRI Medical Billing chiropractic billing team Lake Mary Florida" className="img-anim" style={{ width: "100%", display: "block" }} />
             </div>
             <div style={{ position: "absolute", bottom: -16, left: -16, background: COLORS.teal, color: "#fff", borderRadius: 14, padding: "16px 20px", boxShadow: "0 8px 24px rgba(0,0,0,.2)" }}>
               <div style={{ fontFamily: "Georgia, serif", fontSize: 26, lineHeight: 1 }}>100%</div>
@@ -484,9 +484,9 @@ export default function HomePage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 18 }} className="services-photo-grid">
             {[
-              { href: "/services", img: "https://images.pexels.com/photos/6592561/pexels-photo-6592561.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Chiropractic billing and coding specialist reviewing insurance claims Florida", name: "Chiropractic Billing & Coding (CPT 98940–98942)", desc: "Expert coding across all chiropractic CPT codes. Every claim pre-audited before submission for a 97%+ first-pass approval rate." },
-              { href: "/rcm", img: "https://images.pexels.com/photos/8297417/pexels-photo-8297417.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Revenue cycle management for chiropractic practice", name: "Chiropractic Revenue Cycle Management (RCM)", desc: "End-to-end RCM — from patient eligibility through claim submission, payment posting, and AR follow-up with full analytics." },
-              { href: "/claims", img: "https://images.pexels.com/photos/8117462/pexels-photo-8117462.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Chiropractic claim submission and follow-up Florida", name: "Chiropractic Claim Submission & AR Follow-Up", desc: "Electronic claims submitted within 24–48 hours. Systematic AR follow-up until every chiropractic claim is paid in full." },
+              { href: "/services", img: "/images/stock/pexels-6592561-w800.jpg", alt: "Chiropractic billing and coding specialist reviewing insurance claims Florida", name: "Chiropractic Billing & Coding (CPT 98940–98942)", desc: "Expert coding across all chiropractic CPT codes. Every claim pre-audited before submission for a 97%+ first-pass approval rate." },
+              { href: "/rcm", img: "/images/stock/pexels-8297417-w800.jpg", alt: "Revenue cycle management for chiropractic practice", name: "Chiropractic Revenue Cycle Management (RCM)", desc: "End-to-end RCM — from patient eligibility through claim submission, payment posting, and AR follow-up with full analytics." },
+              { href: "/claims", img: "/images/stock/pexels-8117462-w800.jpg", alt: "Chiropractic claim submission and follow-up Florida", name: "Chiropractic Claim Submission & AR Follow-Up", desc: "Electronic claims submitted within 24–48 hours. Systematic AR follow-up until every chiropractic claim is paid in full." },
             ].map((s, i) => (
               <motion.div key={s.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
                 transition={{ delay: i * 0.08, duration: 0.5 }} whileHover={{ y: -6 }}>

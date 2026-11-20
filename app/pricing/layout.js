@@ -6,6 +6,7 @@ export const metadata = {
     canonical: "https://myrimedicalbilling.com/pricing",
   },
   openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
     title: "Chiropractic Billing Pricing | MYRI Medical Billing",
     description:
       "Percentage-based, per-claim, or comprehensive bundled pricing — transparent, no long-term contracts, all 50 states.",

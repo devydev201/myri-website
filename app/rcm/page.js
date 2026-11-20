@@ -111,7 +111,7 @@ export default function RCMPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/8297447/pexels-photo-8297447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chiropractic revenue cycle management RCM process Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-8297447-w800.jpg" alt="Chiropractic revenue cycle management RCM process Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col { grid-template-columns: 1fr !important; } }`}</style>
@@ -129,7 +129,7 @@ export default function RCMPage() {
                 — managed by dedicated billing specialists who know chiropractic billing inside and out.
               </p>
               <div className="img-anim-wrap" style={{ borderRadius: 14, overflow: "hidden", boxShadow: "0 8px 24px rgba(13,51,73,.12)", marginBottom: 20 }}>
-                <img src="https://images.pexels.com/photos/9034966/pexels-photo-9034966.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI comprehensive chiropractic RCM process diagram" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+                <img src="/images/stock/pexels-9034966-w800.jpg" alt="MYRI comprehensive chiropractic RCM process diagram" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
               </div>
               <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
                 style={{ background: "#fff", border: `1px solid ${COLORS.grayLight}`, borderRadius: 16, padding: 20, boxShadow: "0 8px 28px rgba(13,51,73,.06)" }}>
@@ -184,7 +184,7 @@ export default function RCMPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/1143521/pexels-photo-1143521.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-1143521-w800.jpg" alt="MYRI Medical Billing why choose us for chiropractic RCM Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .two-col-2 { grid-template-columns: 1fr !important; } }

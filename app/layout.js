@@ -4,6 +4,20 @@ export const metadata = {
   title: "Remote Chiropractic Billing Services | MYRI Medical Billing",
   description:
     "Chiropractic-only billing company in Lake Mary, FL, serving practices remotely. Claims, denials, Medicare compliance, and A/R, inside the EHR you already use.",
+  metadataBase: new URL("https://myrimedicalbilling.com"),
+  openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
+    title: "Remote Chiropractic Billing Services | MYRI Medical Billing",
+    description:
+      "Chiropractic-only billing company in Lake Mary, FL, serving practices remotely. Claims, denials, Medicare compliance, and A/R, inside the EHR you already use.",
+    url: "https://myrimedicalbilling.com",
+    siteName: "MYRI Medical Billing",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://myrimedicalbilling.com/og-image.png"],
+  },
 };
 
 export const viewport = {

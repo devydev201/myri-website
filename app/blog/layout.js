@@ -6,6 +6,7 @@ export const metadata = {
     canonical: "https://myrimedicalbilling.com/blog",
   },
   openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
     title: "MYRI Medical Billing Blog — Chiropractic Billing Insights",
     description:
       "Straight-talking guides on chiropractic billing, coding, denials, and revenue from a chiropractic-only billing specialist.",
