@@ -1,7 +1,8 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Linkedin, Facebook, Mail, Link2, Check, FileText } from "lucide-react";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 import { COLORS } from "../../../lib/tokens";
@@ -69,6 +70,90 @@ function Block({ block }) {
   return null;
 }
 
+const shareBtn = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: 8,
+  minHeight: 44,
+  padding: "0 16px",
+  borderRadius: 22,
+  border: `1px solid ${COLORS.grayLight}`,
+  background: "#fff",
+  color: COLORS.navy,
+  fontSize: 14,
+  fontWeight: 600,
+  textDecoration: "none",
+  cursor: "pointer",
+  fontFamily: "inherit",
+};
+
+function ShareRow({ post }) {
+  const [copied, setCopied] = useState(false);
+  const url = `https://myrimedicalbilling.com/blog/${post.slug}`;
+  const enc = encodeURIComponent;
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (e) {
+      /* clipboard unavailable; the link is still in the address bar */
+    }
+  };
+  return (
+    <div style={{ marginTop: 40, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
+      <span style={{ fontSize: 14, fontWeight: 700, color: COLORS.gray, marginRight: 4 }}>Share this guide</span>
+      <a style={shareBtn} href={`https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+        <Linkedin size={16} aria-hidden="true" /> LinkedIn
+      </a>
+      <a style={shareBtn} href={`https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+        <Facebook size={16} aria-hidden="true" /> Facebook
+      </a>
+      <a style={shareBtn} href={`mailto:?subject=${enc(post.title)}&body=${enc(`I thought you'd find this useful: ${url}`)}`} aria-label="Share by email">
+        <Mail size={16} aria-hidden="true" /> Email
+      </a>
+      <button type="button" style={shareBtn} onClick={copy} aria-label="Copy link to this guide">
+        {copied ? <Check size={16} aria-hidden="true" /> : <Link2 size={16} aria-hidden="true" />} {copied ? "Copied" : "Copy link"}
+      </button>
+    </div>
+  );
+}
+
+function CheatSheetBox() {
+  return (
+    <div
+      style={{
+        marginTop: 40,
+        display: "flex",
+        gap: 18,
+        alignItems: "center",
+        flexWrap: "wrap",
+        background: COLORS.tealLight,
+        border: `1px solid ${COLORS.grayLight}`,
+        borderRadius: 14,
+        padding: "22px 24px",
+      }}
+    >
+      <FileText size={34} color={COLORS.tealDark} aria-hidden="true" style={{ flexShrink: 0 }} />
+      <div style={{ flex: "1 1 260px" }}>
+        <div style={{ fontSize: 17, fontWeight: 700, color: COLORS.navy, marginBottom: 4 }}>
+          Free: Medicare Chiropractic Cheat Sheet
+        </div>
+        <p style={{ fontSize: 15, color: "#2a3b41", lineHeight: 1.6, margin: 0 }}>
+          A one-page guide to covered vs. excluded services, ABN rules, and the AT, GA, GZ, GY, and GX modifiers. Print it for your front desk.
+        </p>
+      </div>
+      <Link
+        href="/medicare-cheat-sheet"
+        style={{ ...shareBtn, background: COLORS.teal, color: "#fff", border: "none", padding: "0 20px" }}
+      >
+        Get the cheat sheet
+      </Link>
+    </div>
+  );
+}
+
 function initials(name) {
   return name
     .split(" ")
@@ -134,6 +219,10 @@ export default function PostView({ post, author, related = [] }) {
             ))}
           </section>
         )}
+
+        <ShareRow post={post} />
+
+        <CheatSheetBox />
 
         {/* About the author */}
         {author && (

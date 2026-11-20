@@ -233,7 +233,7 @@ export default function PricingPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="img-anim-wrap" style={{ borderRadius: 18, overflow: "hidden", boxShadow: "0 16px 40px rgba(13,51,73,.18)" }}>
-            <img src="https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg?auto=compress&cs=tinysrgb&w=800" alt="MYRI Medical Billing pricing compliance Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
+            <img src="/images/stock/pexels-16282306-w800.jpg" alt="MYRI Medical Billing pricing compliance Lake Mary Florida" className="img-anim" style={{ width: "100%", objectFit: "cover", display: "block" }} />
           </motion.div>
         </div>
         <style>{`@media (max-width: 860px) { .compliance-grid { grid-template-columns: 1fr !important; } }`}</style>

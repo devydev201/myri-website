@@ -40,7 +40,7 @@ const SERVICES = [
       "Obtain and track pre-authorizations and referrals",
       "PIP and personal injury coverage verification for auto accident patients",
     ],
-    img: "https://images.pexels.com/photos/6248984/pexels-photo-6248984.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-6248984-w800.jpg",
   },
   {
     tag: "Payments",
@@ -52,7 +52,7 @@ const SERVICES = [
       "Underpayment identification and recovery",
       "Patient payment posting and balance reconciliation",
     ],
-    img: "https://images.pexels.com/photos/8085931/pexels-photo-8085931.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-8085931-w800.jpg",
   },
   {
     tag: "Denials",
@@ -64,7 +64,7 @@ const SERVICES = [
       "Medical necessity appeal letters with clinical documentation support",
       "Payer escalation and peer-to-peer review coordination",
     ],
-    img: "https://images.pexels.com/photos/7821674/pexels-photo-7821674.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-7821674-w800.jpg",
   },
   {
     tag: "Patient Billing",
@@ -76,7 +76,7 @@ const SERVICES = [
       "Payment plan coordination and tracking",
       "Patient responsibility calculation after insurance adjudication",
     ],
-    img: "https://images.pexels.com/photos/4269274/pexels-photo-4269274.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-4269274-w800.jpg",
   },
   {
     tag: "Analytics",
@@ -88,7 +88,7 @@ const SERVICES = [
       "AR aging analysis with recovery prioritization",
       "Custom reports tailored to your practice's key performance metrics",
     ],
-    img: "https://images.pexels.com/photos/6476588/pexels-photo-6476588.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-6476588-w800.jpg",
   },
   {
     tag: "Credentialing",
@@ -100,7 +100,7 @@ const SERVICES = [
       "Group and individual NPI enrollment",
       "Credentialing status monitoring and follow-up",
     ],
-    img: "https://images.pexels.com/photos/7567533/pexels-photo-7567533.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-7567533-w800.jpg",
   },
   {
     tag: "Compliance",
@@ -124,7 +124,7 @@ const SERVICES = [
       "Regular claim status updates and proactive communication from your billing specialist",
       "Regular billing performance review calls with your team",
     ],
-    img: "https://images.pexels.com/photos/8866726/pexels-photo-8866726.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "/images/stock/pexels-8866726-w800.jpg",
   },
 ];
 

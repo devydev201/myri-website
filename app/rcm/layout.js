@@ -6,6 +6,7 @@ export const metadata = {
     canonical: "https://myrimedicalbilling.com/rcm",
   },
   openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
     title: "Chiropractic Revenue Cycle Management | MYRI Medical Billing",
     description:
       "Full-cycle RCM for chiropractic practices — from verification and coding to denial appeals and AR follow-up. Remote, all 50 states.",

@@ -75,6 +75,12 @@ export default function sitemap() {
     },
     ...blogPostUrls,
     {
+      url: `${baseUrl}/medicare-cheat-sheet`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
       lastModified,
       changeFrequency: 'yearly',

@@ -15,6 +15,7 @@ export function generateMetadata({ params }) {
     description: post.metaDescription,
     alternates: { canonical: url },
     openGraph: {
+      images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
       title: post.title,
       description: post.metaDescription,
       url,

@@ -8,6 +8,7 @@ export const metadata = {
     canonical: "https://myrimedicalbilling.com/faq",
   },
   openGraph: {
+    images: [{ url: "https://myrimedicalbilling.com/og-image.png", width: 1200, height: 630, alt: "MYRI Medical Billing: chiropractic billing, done right" }],
     title: "Chiropractic Billing FAQ | MYRI Medical Billing",
     description:
       "Plain answers on CPT coding, the Medicare AT modifier, denial causes, PIP and MedPay, credentialing, and billing cost — for chiropractic practices in all 50 states.",
