@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { COLORS, SITE, NAV_LINKS } from "../lib/tokens";
+import { PromoBar, CHEAT_SHEET_HREF } from "./CheatSheetPromo";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -50,6 +51,7 @@ export default function Nav() {
         transition: "all .3s ease",
       }}
     >
+      {pathname !== CHEAT_SHEET_HREF && <PromoBar />}
       <div
         style={{
           maxWidth: 1240,
