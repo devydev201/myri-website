@@ -201,9 +201,18 @@ export default function PostView({ post, author, related = [] }) {
         transition={{ duration: 0.5 }}
         style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px 24px" }}
       >
-        {post.body.map((block, i) => (
-          <Block key={i} block={block} />
-        ))}
+        {(() => {
+          // Show the cheat sheet box just before the second section heading,
+          // so readers see it early instead of only at the end.
+          const h2s = post.body.map((b, i) => (b.type === "h2" ? i : -1)).filter((i) => i >= 0);
+          const boxAt = h2s.length > 1 ? h2s[1] : Math.min(3, post.body.length);
+          return post.body.map((block, i) => (
+            <div key={i}>
+              {i === boxAt && <CheatSheetBox />}
+              <Block block={block} />
+            </div>
+          ));
+        })()}
 
         {/* FAQs */}
         {post.faqs && post.faqs.length > 0 && (
@@ -221,8 +230,6 @@ export default function PostView({ post, author, related = [] }) {
         )}
 
         <ShareRow post={post} />
-
-        <CheatSheetBox />
 
         {/* About the author */}
         {author && (

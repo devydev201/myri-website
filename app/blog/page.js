@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import PageHero from "../../components/PageHero";
+import { PromoBand } from "../../components/CheatSheetPromo";
 import { COLORS } from "../../lib/tokens";
 import { BLOG_POSTS } from "../../lib/blogPosts";
 
@@ -29,7 +30,11 @@ export default function BlogIndex() {
         img="/images/blog-hero.jpg"
       />
 
-      <section style={{ padding: "64px 24px", maxWidth: 1100, margin: "0 auto" }}>
+      <section style={{ padding: "48px 24px 0" }}>
+        <PromoBand compact />
+      </section>
+
+      <section style={{ padding: "40px 24px 64px", maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 28 }}>
           {BLOG_POSTS.map((post, i) => (
             <motion.div

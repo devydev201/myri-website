@@ -7,6 +7,7 @@ import { ClipboardList, RefreshCw, Briefcase, Car, Building2, FileSignature, Sea
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import StatsStrip from "../components/StatsStrip";
+import { PromoBand } from "../components/CheatSheetPromo";
 import AnimateOnView from "../components/AnimateOnView";
 import { COLORS } from "../lib/tokens";
 
@@ -339,6 +340,11 @@ export default function HomePage() {
       </section>
 
       <StatsStrip stats={HOME_STATS} />
+
+      {/* FREE CHEAT SHEET */}
+      <section style={{ padding: "40px 24px 0" }}>
+        <PromoBand />
+      </section>
 
       {/* WELCOME */}
       <section style={{ padding: "64px 24px" }}>

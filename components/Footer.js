@@ -23,6 +23,8 @@ const COLS = [
       { label: "Pricing", href: "/pricing" },
       { label: "Contact Us", href: "/contact" },
       { label: "Free Billing Audit", href: "/contact" },
+      { label: "Free Medicare Cheat Sheet", href: "/medicare-cheat-sheet" },
+      { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
